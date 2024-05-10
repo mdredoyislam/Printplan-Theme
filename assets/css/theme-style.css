@@ -1,0 +1,17 @@
+/*-----------------------------
+Header Menu Style
+-----------------------------*/
+.navbar-nav{
+    column-gap: 40px;
+}
+.navbar-nav li a.nav-link{
+    font-size: 20px;
+    line-height: 1.3;
+    font-family: var(--primary-font);
+    font-weight: 500;
+    color: var(--dark-color);
+    padding: 0 !important;
+}
+.navbar-nav li a.nav-link:hover{
+    color: var(--primary-color);
+}
