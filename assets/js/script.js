@@ -1,46 +1,7 @@
 (function($) {
 	
 	"use strict";
-	
-	//Hide Loading Box (Preloader)
-	function handlePreloader() {
-		if($('.loader-wrap').length){
-			$('.loader-wrap').delay(1000).fadeOut(500);
-		}
-	}
 
-	if ($(".preloader-close").length) {
-        $(".preloader-close").on("click", function(){
-            $('.loader-wrap').delay(200).fadeOut(500);
-        })
-    }
-
-	
-	
-	//Update Header Style and Scroll to Top
-	function headerStyle() {
-		if($('.main-header').length){
-			var windowpos = $(window).scrollTop();
-			var siteHeader = $('.main-header');
-			var scrollLink = $('.scroll-top');
-			if (windowpos >= 150) {
-				siteHeader.addClass('fixed-header');
-				scrollLink.addClass('open');
-			} else {
-				siteHeader.removeClass('fixed-header');
-				scrollLink.removeClass('open');
-			}
-		}
-	}
-	
-	headerStyle();
-
-
-	//Submenu Dropdown Toggle
-	if($('.main-header li.menu-item-has-children ul').length){
-		$('.main-header .navigation li.menu-item-has-children').append('<div class="dropdown-btn"><span class="fas fa-angle-down"></span></div>');
-		
-	}
 
 	//Mobile Nav Hide Show
 	if($('.mobile-menu').length){
@@ -68,19 +29,6 @@
 		//Menu Toggle Btn
 		$('.mobile-menu .menu-backdrop,.mobile-menu .close-btn').on('click', function() {
 			$('body').removeClass('mobile-menu-visible');
-		});
-	}
-
-
-	// Scroll to a Specific Div
-	if($('.scroll-to-target').length){
-		$(".scroll-to-target").on('click', function() {
-			var target = $(this).attr('data-target');
-		   // animate
-		   $('html, body').animate({
-			   scrollTop: $(target).offset().top
-			 }, 1000);
-	
 		});
 	}
 
@@ -271,7 +219,6 @@
 			});
 		}
 	}
-	
 	enableMasonry();
 
 
@@ -281,31 +228,75 @@
 			var el = $(this);
 			var percent = el.data('percent');
 			$(el).css('width',percent).addClass('counted');
-		},{accY: -50});
+		},{accY: -20});
 
 	}
 
-
-
-	/* ==========================================================================
-   When document is Scrollig, do
-   ========================================================================== */
+/* ==========================================================================
+   Use PrintPlan Scripts
+========================================================================== */
+	//Update Header Style and Scroll to Top
+	function headerStyle() {
+		if($('.main-header').length){
+			var windowpos = $(window).scrollTop();
+			var siteHeader = $('.main-header');
+			var scrollLink = $('.scroll-top');
+			if (windowpos >= 150) {
+				siteHeader.addClass('fixed-header');
+				scrollLink.addClass('open');
+			} else {
+				siteHeader.removeClass('fixed-header');
+				scrollLink.removeClass('open');
+			}
+		}
+	}
+	headerStyle();
+	// Scroll to a Specific Div
+	if($('.scroll-to-target').length){
+		$(".scroll-to-target").on('click', function() {
+			var target = $(this).attr('data-target');
+		   // animate
+		   $('html, body').animate({
+			   scrollTop: $(target).offset().top
+			 }, 1000);
 	
+		});
+	}
+	//Hide Loading Box (Preloader)
+	function handlePreloader() {
+		if($('.loader-wrap').length){
+			$('.loader-wrap').delay(1000).fadeOut(500);
+		}
+	}
+
+	if ($(".preloader-close").length) {
+		$(".preloader-close").on("click", function(){
+			$('.loader-wrap').delay(200).fadeOut(500);
+		})
+	}
+
+	//Submenu Dropdown Toggle Icon
+	if($('.main-header li.menu-item-has-children ul').length){
+		$('.main-header .navbar-nav li.menu-item-has-children').append('<div class="dropdown-btn"><span class="fas fa-angle-down"></span></div>');
+		
+	}
+	//Menu On Hover
+	$('body').on('mouseenter mouseleave','.nav-item',function(e){
+		if ($(window).width() > 750) {
+			var _d=$(e.target).closest('.nav-item');_d.addClass('show');
+			setTimeout(function(){
+			_d[_d.is(':hover')?'addClass':'removeClass']('show');
+			},1);
+		}
+	});
+
 	$(window).on('scroll', function() {
 		headerStyle();
 	});
-
-	
-	
-	/* ==========================================================================
-   When document is loaded, do
-   ========================================================================== */
-	
 	$(window).on('load', function() {
 		handlePreloader();
 		enableMasonry();
 	});
-
 	
 
 })(window.jQuery);

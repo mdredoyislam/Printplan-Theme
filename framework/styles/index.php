@@ -10,7 +10,6 @@ class printplan_Style {
 		wp_enqueue_style( 'bootstrap', PRINTPLAN_CSS_URL . 'bootstrap.min.css', false, time() );
 		wp_enqueue_style( 'jquery-fancybox', PRINTPLAN_CSS_URL . 'jquery.fancybox.min.css', false, '1' );
 		wp_enqueue_style( 'animate', PRINTPLAN_CSS_URL . 'animate.css', false, '1' );
-		wp_enqueue_style( 'printplan-theme-color', PRINTPLAN_CSS_URL . 'color.css', false, time() );
 		wp_enqueue_style( 'printplan-theme-global', PRINTPLAN_CSS_URL . 'global.css', false, time() );
 		wp_enqueue_style( 'printplan-style', get_stylesheet_uri(), null, time() );
 		wp_enqueue_style( 'printplan-theme-style', PRINTPLAN_CSS_URL . 'theme-style.css', false, time() );

@@ -8,73 +8,80 @@
  *
  * @package DVPrintplan
  */
-
 ?>
-
-	<footer id="colophon" class="site-footer header-light-bg pt-4 pb-4">
-		<div class="footer-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<nav class="navbar navbar-expand-lg justify-content-between">
-							<div class="site-branding">
-								<?php
-									if(!get_custom_logo()){
-										if ( is_front_page() && is_home() ) :
-											?>
-											<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-											<?php
-											else :
-											?>
-											<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-											<?php
-										endif;
-									}else{
-										the_custom_logo();
-									}
-								?>
-							</div><!-- .site-branding -->
-							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>
-							</button>
-							<?php
-								$primary_menu = wp_nav_menu(array(
-										'theme_location' 	=> 'footer-menu',
-										'container'     	=> 'div',
-										'container_class' 	=> 'collapse navbar-collapse justify-content-end',
-										'container_id' 		=> 'navbarNavDropdown',
-										'menu_id' 			=> 'primary-menu',
-										'menu_class' 		=> 'navbar-nav',
-										'echo' 				=> false,
-										'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-										'walker'          => new WP_Bootstrap_Navwalker(),
-									)
-								);
-								$primary_menu = str_replace('<a', '<a class="nav-link" ', $primary_menu);
-								echo $primary_menu;
-							?>
-						</nav>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'dvprintplan' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'dvprintplan' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'dvprintplan' ), 'dvprintplan', '<a href="https://www.desvert.com">DesVert</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+<footer id="colophon" class="main-footer">
+    <div class="container">
+        <div class="footer-top-wrap">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="site-branding">
+                        <?php
+                                if(!get_custom_logo()){
+                                    if ( is_front_page() && is_home() ) :
+                                        ?>
+                        <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
+                        <?php
+                                        else :
+                                        ?>
+                        <p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
+                        <?php
+                                    endif;
+                                }else{
+                                    the_custom_logo();
+                                }
+                            ?>
+                    </div><!-- .site-branding -->
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <?php
+                        $footer_menu = wp_nav_menu([
+                            'theme_location' => 'footer-menu',
+                            'container' => 'div',
+                            'container_class' => 'justify-content-end',
+                            'container_id' => 'footerNav',
+                            'menu_id' => 'footer-menu',
+                            'menu_class' => 'nav justify-content-end',
+                            'echo' => false,
+                            'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
+                            'walker' => new WP_Bootstrap_Navwalker(),
+                        ]);
+                        $footer_menu = str_replace('<a', '<a class="nav-link" ', $footer_menu);
+                        echo $footer_menu;
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-wrap">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="site-info">
+                        <?php
+                            $year = date('Y');
+                            printf(esc_html__('Copyright %2$s %1$s Theme : %3$s Develop by %4$s.', 'dvprintplan'), $year, '&copy;' ,'dvprintplan', '<a href="https://www.desvert.com">DesVert</a>');
+                        ?>
+                    </div><!-- .site-info -->
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="social-links">
+                        <ul class="nav justify-content-end">
+                            <li><a href="#" class="btn common-btn"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" class="btn common-btn"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" class="btn common-btn"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#" class="btn common-btn"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer><!-- #colophon -->
+<button class="scroll-top scroll-to-target open" data-target="html">
+<span class="fa fa-arrow-up"></span>
+</button>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
 </body>
+
 </html>

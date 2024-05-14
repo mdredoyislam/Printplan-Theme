@@ -23,7 +23,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
 :root{
-    --light: #ffffff;
+  --light: #ffffff;
   --primary-color: #FDC500;
   --dark-color: #202020;
   --dark-light: #000000d9;
@@ -43,12 +43,14 @@ body{
   line-height: 24px;
   font-weight: 400;
   text-transform: normal;
+  color: var(--body-color);
 }
 .header-light-bg{
   background: var(--light-color);
 }
-a, button{
+a, button, .navbar-nav > li.active > a, .navbar-nav > li:hover > a{
   text-decoration: none;
+  color: var(--primary-color);
 }
 .nav-link, .nav-link:hover{
     color: var(--primary-color);
@@ -77,6 +79,57 @@ a, button{
     background: var(--primary-color);
     border-color: var(--primary-color);
 }
+section {
+  position: relative;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
+#hero-section{
+  overflow: hidden;
+}
+#hero-section::after {
+  content: "";
+  position: absolute;
+  height: 179px;
+  background-image: linear-gradient(180deg, #ffffff00, #E9E9E9);
+  width: 1100%;
+  bottom: 0;
+}
+section .hero-section-wrap {
+  z-index: 222 !important;
+  position: relative;
+}
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 15%);
+  width: 100%;
+  animation-name: fadeInDown;
+  animation-duration: 500ms;
+  z-index: 999;
+  background: #fff;
+}
+.scroll-top {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  position: fixed;
+  bottom: 105%;
+  right: 30px;
+  font-size: 20px;
+  z-index: 99;
+  color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: .5s ease;
+  background: var(--primary-color);
+}
+.scroll-top.open {
+  bottom: 30px;
+}
 /*Global button Style End*/
 /*Global Heading Style Start*/
 h1, h2, h3, h4, h5, h6{
@@ -88,10 +141,13 @@ h1, h2, h3, h4, h5, h6{
   margin: 0;
   padding: 0;
 }
+.hero-title{
+  font-size: 80px;
+}
 .section-title{
   font-size: 40px;
 }
-.section-title::last-letter{
+.section-title::last-letter, .hero-title::last-letter{
   color: var(--primary-color);
 }
 .box-title{
@@ -545,6 +601,9 @@ h1, h2, h3, h4, h5, h6{
 .pt-80 {
 	padding-top: 80px !important;
 }
+.pt-100{
+  padding-top: 100px;
+}
 
 .pb-5 {
 	padding-bottom: 5px !important;
@@ -608,6 +667,9 @@ h1, h2, h3, h4, h5, h6{
 
 .pb-80 {
 	padding-bottom: 80px !important;
+}
+.pb-100 {
+	padding-bottom: 100px !important;
 }
 
 .pl-5 {

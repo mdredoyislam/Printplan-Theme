@@ -167,7 +167,7 @@ add_filter( "protected_title_format", "dvprintplan_protected_title_change" );
 
 
 function dvprintplan_menu_item_class( $classes, $item ) {
-    $classes[] = "nav-item";
+    $classes[] = "pl-4 pl-md-0 ml-0 ml-md-4";
     //$item[] = "nav-links";
     return $classes;
    // return $item;
