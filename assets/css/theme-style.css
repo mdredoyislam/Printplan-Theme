@@ -132,7 +132,7 @@ Header Menu Style
 
 
 /*----------------------------------
-Home Page CSS
+    Home Page CSS
 ------------------------------------*/
 .hero-icons a {
     height: 50px;
@@ -143,43 +143,210 @@ Home Page CSS
     border: 1px solid #D9D9D9;
 }
 
-
-.progress-box {
-    margin-bottom: 15px;
+/*----------------------------------
+    About Section Design
+------------------------------------*/
+.about-wrapper {
+    position: relative;
+}
+.progress-inner {
+    width: 405px !important;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #000000D9;
+    padding: 46px 24px;
+}
+.progress-box{
+    position: relative;
 }
 .progress-box .bar {
     position: relative;
     width: 100%;
-    height: 5px;
-    background: #f8f7f3;
+    height: 9px;
+    background: transparent;
     border-radius: 0px;
     margin-bottom: 12px;
+    transition: all linear .5s;
+    border: 1px solid var(--primary-color);
 }
 .progress-box .bar-inner {
     position: relative;
     display: block;
     width: 0px;
-    height: 5px;
+    height: 100%;
     border-radius: 0px;
-    -webkit-transition: all 1500ms ease;
-    -ms-transition: all 1500ms ease;
-    -o-transition: all 1500ms ease;
-    -moz-transition: all 1500ms ease;
-    transition: all 1500ms ease;
+    background: var(--primary-color);
+    transition: all linear .5s;
 }
-.progress-box .bar-inner {
-    background: #9e0036;
+.progress-box .box-title3, .progress-inner .box-title2{
+    color: var(--light-color);
 }
 .progress-box .count-text {
     position: absolute;
-    top: -40px;
+    top: 0px;
     right: 0px;
     font-size: 16px;
-    color: #717577;
-    -webkit-transition: all 500ms ease;
-    -ms-transition: all 500ms ease;
-    -o-transition: all 500ms ease;
-    -moz-transition: all 500ms ease;
-    transition: all 500ms ease;
+    color: var(--light-color);
+}
+.about-icons {
+    height: 100px;
+    width: 100px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    padding: 20px;
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    transform: scale(1);
+}
+.about-icons img{
+    width: 100%;
+    animation: backspin 5s linear infinite;
+}
+@keyframes backspin{
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+.hoveranimation{
+    animation: zoomInOut 1s linear infinite;
+    cursor: pointer;
+}
+@keyframes zoomInOut{
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
+.services-box{
+    padding: 20px 40px;
+    border: var(--common-border);
+    border-radius: 8px;
+    transition: all linear.3s;
+    transform: scale(1);
+}
+.services-box:hover{
+    background: var(--light );
+    border-color: var(--light);
+    transform: scale(1.05);
+    border-radius: 0;
+    z-index: 1;
+    position: relative;
+    cursor: pointer;
+}
+.services-text p{
+    margin: 0;
+}
+
+
+
+/* ---- isotope ---- */
+.grid-sizer,.grid-item {
+    width: 33.333%;
+}
+.grid-item {
+    float: left;
+    position: relative;
+}
+.grid-item img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+}
+.project-linker {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    transition: all linear.3s;
+    background: #52525878;
+}
+.project-linker a {
+    height: 60px;
+    width: 60px;
+    padding: unset;
+    font-size: 20px;
+    line-height: 60px;
+}
+.grid-item:hover .project-linker{
+    transform: scale(1);
+}
+.counter-wrap{
+    border-top: var(--common-border);
+}
+.counter-item {
+    height: 195px;
+    width: 195px;
+    text-align: center;
+    border: 4px dashed #D9D9D9;
+    border-radius: 50%;
+    padding: 40px 20px;
+    position: relative;
+}
+.counter-item::before {
+    content: "";
+    position: absolute;
+    height: 95%;
+    width: 95%;
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: scale(1) translateX(-50%) translateY(-50%);
+}
+.blog-thumbnsil img {
+    width: 100%;
+    border-radius: 5px;
+    transform: scale(1);
+    transition: all linear.3s;
+}
+.blog-thumbnsil {
+    overflow: hidden;
+    transition: all linear.3s;
+    border-radius: 5px;
+}
+.blog-item:hover img {
+    transform: scale(1.1);
+}
+.blog-content .post-categories {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+}
+.blog-content .post-categories a{
+    color: var(--primary-color);
+}
+/*----------------------------------
+    Contact Section Design
+------------------------------------*/
+#contact-section {
+    background-position: bottom center !important;
+    background-size: 100% 50% !important;
+    background-repeat: no-repeat !important;
+}
+.form-wrap .form-group .form-control {
+    background: var(--light-color);
+    border: 1px solid #E0E0E0;
+    border-radius: 0;
+    min-height: 58px;
+    padding: 20px 30px;
+}
+.form-wrap button {
+    min-height: 58px;
+    border-radius: 0;
+}

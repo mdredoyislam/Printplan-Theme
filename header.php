@@ -37,7 +37,7 @@
 <div id="page" class="site">
 <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'dvprintplan' ); ?></a>
 
-<header id="masthead" class="main-header pt-3 pb-3">
+<header id="masthead" class="main-header header-light-bg pt-3 pb-3">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">

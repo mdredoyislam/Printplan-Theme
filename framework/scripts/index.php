@@ -10,9 +10,12 @@ class Printplan_Scripts{
 		wp_enqueue_script( 'bootstrap', PRINTPLAN_JS_URL . 'bootstrap.min.js', array( 'jquery' ), time(), true );
 		wp_enqueue_script( 'owl', PRINTPLAN_JS_URL . 'owl.js', array( 'jquery' ), time(), true );
 		wp_enqueue_script( 'wow', PRINTPLAN_JS_URL . 'wow.js', array( 'jquery' ), time(), true );
+		wp_enqueue_script( 'isotope', PRINTPLAN_JS_URL . 'isotope.js', array( 'jquery' ), time(), true );
+		wp_enqueue_script( 'counterup', PRINTPLAN_JS_URL . 'jquery.counterup.js', array( 'jquery' ), time(), true );
+		wp_enqueue_script( 'waypoints', PRINTPLAN_JS_URL . 'waypoints.min.js', array( 'jquery' ), time(), true );
+		wp_enqueue_script( 'imagesloaded', PRINTPLAN_JS_URL . 'imagesloaded.pkgd.js', array( 'jquery' ), time(), true );
 		wp_enqueue_script( 'jquery-fancybox', PRINTPLAN_JS_URL . 'jquery.fancybox.js', array( 'jquery' ), time(), true );
 		wp_enqueue_script( 'appear', PRINTPLAN_JS_URL . 'appear.js', array( 'jquery' ), time(), true );
-		wp_enqueue_script( 'scrollbar', PRINTPLAN_JS_URL . 'scrollbar.js', array( 'jquery' ), time(), true );
 		wp_enqueue_script( 'nav-tool.js', PRINTPLAN_JS_URL . 'nav-tool.js', array( 'jquery' ), time(), true );
 		wp_enqueue_script( 'font-awesome', PRINTPLAN_JS_URL . 'all.min.js', array( 'jquery' ), time(), true );
 		wp_enqueue_script( 'printplan-scripts', PRINTPLAN_JS_URL . 'script.js', array( 'jquery' ), time(), true );

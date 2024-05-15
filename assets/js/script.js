@@ -2,7 +2,7 @@
 	
 	"use strict";
 
-
+/*
 	//Mobile Nav Hide Show
 	if($('.mobile-menu').length){
 		
@@ -38,36 +38,6 @@
 		mobile:       false
 		});
 		wow.init();
-	}
-
-
-	//Fact Counter + Text Count
-	if($('.count-box').length){
-		$('.count-box').appear(function(){
-	
-			var $t = $(this),
-				n = $t.find(".count-text").attr("data-stop"),
-				r = parseInt($t.find(".count-text").attr("data-speed"), 10);
-				
-			if (!$t.hasClass("counted")) {
-				$t.addClass("counted");
-				$({
-					countNum: $t.find(".count-text").text()
-				}).animate({
-					countNum: n
-				}, {
-					duration: r,
-					easing: "linear",
-					step: function() {
-						$t.find(".count-text").text(Math.floor(this.countNum));
-					},
-					complete: function() {
-						$t.find(".count-text").text(this.countNum);
-					}
-				});
-			}
-			
-		},{accY: 0});
 	}
 
 
@@ -220,18 +190,7 @@
 		}
 	}
 	enableMasonry();
-
-
-    // Progress Bar
-	if ($('.count-bar').length) {
-		$('.count-bar').appear(function(){
-			var el = $(this);
-			var percent = el.data('percent');
-			$(el).css('width',percent).addClass('counted');
-		},{accY: -20});
-
-	}
-
+*/
 /* ==========================================================================
    Use PrintPlan Scripts
 ========================================================================== */
@@ -251,6 +210,7 @@
 		}
 	}
 	headerStyle();
+
 	// Scroll to a Specific Div
 	if($('.scroll-to-target').length){
 		$(".scroll-to-target").on('click', function() {
@@ -262,6 +222,7 @@
 	
 		});
 	}
+
 	//Hide Loading Box (Preloader)
 	function handlePreloader() {
 		if($('.loader-wrap').length){
@@ -297,6 +258,60 @@
 		handlePreloader();
 		enableMasonry();
 	});
-	
+
+	//About Progress Bar
+	$(document).ready(function(){
+		progress_bar();
+	});
+	function progress_bar() {
+		var speed = 30;
+		var items = $('.progress-inner').find('.progress-box');
+		
+		items.each(function() {
+			var item = $(this).find('.progress');
+			var itemValue = item.data('progress');
+			var i = 0;
+			var value = $(this);
+			
+			var count = setInterval(function(){
+				if(i <= itemValue) {
+					var iStr = i.toString();
+					item.css({
+						'width': iStr+'%'
+					});
+					value.find('.item_value').html(iStr +'%');
+				}
+				else {
+					clearInterval(count);
+				}
+				i++;
+			},speed);
+		});
+	}
+
+	//Hover ZoomInOut Animation
+	$('body').on('mouseenter mouseleave','.about-icons',function(e){
+		var _d=$(e.target).closest('.about-icons');_d.addClass('hoveranimation');
+		setTimeout(function(){
+		_d[_d.is(':hover')?'addClass':'removeClass']('hoveranimation');
+		},1);
+	});
+
+	//Massonary
+	var $grid = jQuery('.grid').imagesLoaded( function() {
+		$grid.isotope({
+			itemSelector: '.grid-item',
+			percentPosition: true,
+			layoutMode: 'masonry',
+			masonry: {
+				columnWidth: '.grid-sizer'
+			}
+		});
+	});
+	//Counter UP
+	jQuery('.counter').counterUp({
+		delay: 20,
+		time: 5000
+	});
 
 })(window.jQuery);
