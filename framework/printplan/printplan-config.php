@@ -8,8 +8,8 @@ if ( ! class_exists( 'Redux' ) ) {
 }
 
 // This is your option name where all the Redux data is stored.
-$opt_prefix = 'resox_';
-$opt_name   = 'resox_options';
+$opt_prefix = 'dvprintplan_';
+$opt_name   = 'dvprintplan_options';
 /**
  * ---> SET ARGUMENTS
  * All the possible arguments for Redux.
@@ -29,8 +29,8 @@ $args = array(
 	// Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
 	'allow_sub_menu'       => true,
 	// Show the sections below the admin menu item or not
-	'menu_title'           => esc_html__( 'Resox Options', 'resox' ),
-	'page_title'           => esc_html__( 'Resox Options', 'resox' ),
+	'menu_title'           => esc_html__( 'Printplan Options', 'dvprintplan' ),
+	'page_title'           => esc_html__( 'Printplan Options', 'dvprintplan' ),
 	// You will need to generate a Google API key to use this feature.
 	// Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
 	'google_api_key'       => '',
@@ -97,43 +97,43 @@ Redux::setArgs( $opt_name, $args );
 Redux::setSection(
 	$opt_name,
 	array(
-		'title'  => esc_html__( 'Base theme option', 'resox' ),
+		'title'  => esc_html__( 'Base theme option', 'dvprintplan' ),
 		'id'     => 'base_theme_option',
-		'desc'   => esc_html__( 'Chnage Base theme option here', 'resox' ),
+		'desc'   => esc_html__( 'Chnage Base theme option here', 'dvprintplan' ),
 		'icon'   => 'el el-home',
 		'fields' => array(
 			array(
 				'id'      => $opt_prefix . 'preloader_on_off',
 				'type'    => 'switch',
-				'title'   => esc_html__( 'Preloader on off switch', 'resox' ),
+				'title'   => esc_html__( 'Preloader on off switch', 'dvprintplan' ),
 				'default' => false,
-				'on'      => esc_html__( 'Enable', 'resox' ),
-				'off'     => esc_html__( 'Disable', 'resox' ),
+				'on'      => esc_html__( 'Enable', 'dvprintplan' ),
+				'off'     => esc_html__( 'Disable', 'dvprintplan' ),
 			),
 			array(
 				'id'       => $opt_prefix . '_site_preloader_image',
 				'type'     => 'media',
 				'url'      => true,
 				'compiler' => 'true',
-				'desc'     => esc_html__( 'Basic media uploader with disabled URL input field.', 'resox' ),
-				'subtitle' => esc_html__( 'Add/Upload preloader using the WordPress native uploader', 'resox' ),
-				'title'    => esc_html__( 'Site Preloader', 'resox' ),
+				'desc'     => esc_html__( 'Basic media uploader with disabled URL input field.', 'dvprintplan' ),
+				'subtitle' => esc_html__( 'Add/Upload preloader using the WordPress native uploader', 'dvprintplan' ),
+				'title'    => esc_html__( 'Site Preloader', 'dvprintplan' ),
 			),
 			array(
 				'id'      => $opt_prefix . 'back_to_top_on_off',
 				'type'    => 'switch',
-				'title'   => esc_html__( 'Back To Top on off switch', 'resox' ),
+				'title'   => esc_html__( 'Back To Top on off switch', 'dvprintplan' ),
 				'default' => false,
-				'on'      => esc_html__( 'Enable', 'resox' ),
-				'off'     => esc_html__( 'Disable', 'resox' ),
+				'on'      => esc_html__( 'Enable', 'dvprintplan' ),
+				'off'     => esc_html__( 'Disable', 'dvprintplan' ),
 			),
 			array(
 				'id'      => $opt_prefix . 'theme_base_css',
 				'type'    => 'switch',
-				'title'   => esc_html__( 'theme base css', 'resox' ),
+				'title'   => esc_html__( 'theme base css', 'dvprintplan' ),
 				'default' => false,
-				'on'      => esc_html__( 'Enable', 'resox' ),
-				'off'     => esc_html__( 'Disable', 'resox' ),
+				'on'      => esc_html__( 'Enable', 'dvprintplan' ),
+				'off'     => esc_html__( 'Disable', 'dvprintplan' ),
 			),
 		),
 	)
@@ -141,19 +141,19 @@ Redux::setSection(
 Redux::setSection(
 	$opt_name,
 	array(
-		'title'  => esc_html__( 'Header theme option', 'resox' ),
+		'title'  => esc_html__( 'Header theme option', 'dvprintplan' ),
 		'id'     => 'header_theme_option',
-		'desc'   => esc_html__( 'Chnage Header theme option here', 'resox' ),
+		'desc'   => esc_html__( 'Chnage Header theme option here', 'dvprintplan' ),
 		'icon'   => 'el el-home',
 		'fields' => array(
 			array(
 				'id'      => $opt_prefix . 'header_menu_style',
 				'type'    => 'select',
-				'title'   => esc_html__( 'Header menu style', 'resox' ),
+				'title'   => esc_html__( 'Header menu style', 'dvprintplan' ),
 				'options' => array(
-					'1' => esc_html__( 'One', 'resox' ),
-					'2' => esc_html__( 'Two', 'resox' ),
-					'3' => esc_html__( 'Elementor Header', 'resox' ),
+					'1' => esc_html__( 'One', 'dvprintplan' ),
+					'2' => esc_html__( 'Two', 'dvprintplan' ),
+					'3' => esc_html__( 'Elementor Header', 'dvprintplan' ),
 				),
 			),
 			array(
@@ -161,31 +161,31 @@ Redux::setSection(
 				'id'       => $opt_prefix . 'header_widget_elementor',
 				'type'     => 'select',
 				'multi'    => true,
-				'title'    => esc_html__( 'Header builder widget', 'resox' ),
-				'options'  => resox_elementor_library(),
+				'title'    => esc_html__( 'Header builder widget', 'dvprintplan' ),
+				//'options'  => dvprintplan_elementor_library(),
 			),
 			array(
 				'required' => array( $opt_prefix . 'header_menu_style', '=', array( '2' ) ),
 				'id'       => $opt_prefix . 'header_on_of_search',
 				'type'     => 'switch',
-				'title'    => esc_html__( 'Header search button on off', 'resox' ),
+				'title'    => esc_html__( 'Header search button on off', 'dvprintplan' ),
 				'default'  => false,
-				'on'       => esc_html__( 'Enable', 'resox' ),
-				'off'      => esc_html__( 'Disable', 'resox' ),
+				'on'       => esc_html__( 'Enable', 'dvprintplan' ),
+				'off'      => esc_html__( 'Disable', 'dvprintplan' ),
 			),
 
 			array(
 				'required' => array( $opt_prefix . 'header_menu_style', '=', array( '1', '2' ) ),
 				'id'       => $opt_prefix . 'header_top_bar_appointment_text',
 				'type'     => 'text',
-				'title'    => esc_html__( 'Button Text', 'resox' ),
-				'default'  => esc_html__( 'Book Appointment', 'resox' ),
+				'title'    => esc_html__( 'Button Text', 'dvprintplan' ),
+				'default'  => esc_html__( 'Book Appointment', 'dvprintplan' ),
 			),
 			array(
 				'required' => array( $opt_prefix . 'header_menu_style', '=', array( '1', '2' ) ),
 				'id'       => $opt_prefix . 'header_top_bar_appointment_url',
 				'type'     => 'text',
-				'title'    => esc_html__( 'Button URL', 'resox' ),
+				'title'    => esc_html__( 'Button URL', 'dvprintplan' ),
 			),
 		),
 	)
@@ -193,7 +193,7 @@ Redux::setSection(
 Redux::setSection(
 	$opt_name,
 	array(
-		'title'      => esc_html__( 'Header Top Bar', 'resox' ),
+		'title'      => esc_html__( 'Header Top Bar', 'dvprintplan' ),
 		'id'         => 'header_menu_option',
 		'subsection' => true,
 		'icon'       => 'el el-home',
@@ -201,46 +201,46 @@ Redux::setSection(
 			array(
 				'id'      => $opt_prefix . 'header_top_bar_style',
 				'type'    => 'select',
-				'title'   => esc_html__( 'Header top bar style', 'resox' ),
+				'title'   => esc_html__( 'Header top bar style', 'dvprintplan' ),
 				'options' => array(
-					'1' => esc_html__( 'One', 'resox' ),
-					'2' => esc_html__( 'Two', 'resox' ),
+					'1' => esc_html__( 'One', 'dvprintplan' ),
+					'2' => esc_html__( 'Two', 'dvprintplan' ),
 				),
 			),
 			array(
 				'id'      => $opt_prefix . 'header_top_bar_welcome',
 				'type'    => 'text',
-				'title'   => esc_html__( 'Welcome Text', 'resox' ),
-				'default' => esc_html__( 'Welcome to the professional physiotherapy clinic', 'resox' ),
+				'title'   => esc_html__( 'Welcome Text', 'dvprintplan' ),
+				'default' => esc_html__( 'Welcome to the professional physiotherapy clinic', 'dvprintplan' ),
 			),
 			array(
 				'id'      => $opt_prefix . 'header_top_bar_address',
 				'type'    => 'text',
-				'title'   => esc_html__( 'Address', 'resox' ),
-				'default' => esc_html__( '88 broklyn silver street, USA', 'resox' ),
+				'title'   => esc_html__( 'Address', 'dvprintplan' ),
+				'default' => esc_html__( '88 broklyn silver street, USA', 'dvprintplan' ),
 			),
 			array(
 				'id'      => $opt_prefix . 'header_top_bar_hours',
 				'type'    => 'text',
-				'title'   => esc_html__( 'Hours', 'resox' ),
-				'default' => esc_html__( 'Mon to Fri 9:00am to 6:00pm', 'resox' ),
+				'title'   => esc_html__( 'Hours', 'dvprintplan' ),
+				'default' => esc_html__( 'Mon to Fri 9:00am to 6:00pm', 'dvprintplan' ),
 			),
 			array(
 				'id'      => $opt_prefix . 'header_top_bar_email',
 				'type'    => 'text',
-				'title'   => esc_html__( 'Email', 'resox' ),
-				'default' => esc_html__( 'needhelp@info.com', 'resox' ),
+				'title'   => esc_html__( 'Email', 'dvprintplan' ),
+				'default' => esc_html__( 'needhelp@info.com', 'dvprintplan' ),
 			),
 			array(
 				'id'      => $opt_prefix . 'header_top_bar_phone',
 				'type'    => 'text',
-				'title'   => esc_html__( 'Phone', 'resox' ),
-				'default' => esc_html__( '88 666 000 9999', 'resox' ),
+				'title'   => esc_html__( 'Phone', 'dvprintplan' ),
+				'default' => esc_html__( '88 666 000 9999', 'dvprintplan' ),
 			),
 			array(
 				'id'    => $opt_prefix . 'header_top_bar_social',
 				'type'  => 'textarea',
-				'title' => esc_html__( 'Social', 'resox' ),
+				'title' => esc_html__( 'Social', 'dvprintplan' ),
 			),
 		),
 	)
@@ -248,19 +248,19 @@ Redux::setSection(
 Redux::setSection(
 	$opt_name,
 	array(
-		'title'      => esc_html__( 'sticky header Menu', 'resox' ),
+		'title'      => esc_html__( 'sticky header Menu', 'dvprintplan' ),
 		'id'         => 'sticky_header_menu_option',
 		'subsection' => true,
-		'desc'       => esc_html__( 'Chnage Header Menu option here', 'resox' ),
+		'desc'       => esc_html__( 'Chnage Header Menu option here', 'dvprintplan' ),
 		'icon'       => 'el el-home',
 		'fields'     => array(
 			array(
 				'id'      => $opt_prefix . 'sticky_header_on',
 				'type'    => 'switch',
-				'title'   => esc_html__( 'sticky header on off switch', 'resox' ),
+				'title'   => esc_html__( 'sticky header on off switch', 'dvprintplan' ),
 				'default' => false,
-				'on'      => esc_html__( 'Enable', 'resox' ),
-				'off'     => esc_html__( 'Disable', 'resox' ),
+				'on'      => esc_html__( 'Enable', 'dvprintplan' ),
+				'off'     => esc_html__( 'Disable', 'dvprintplan' ),
 			),
 		),
 	)
@@ -268,27 +268,27 @@ Redux::setSection(
 Redux::setSection(
 	$opt_name,
 	array(
-		'title'      => esc_html__( 'Mobile Menu', 'resox' ),
+		'title'      => esc_html__( 'Mobile Menu', 'dvprintplan' ),
 		'id'         => 'mobile_menu_option',
 		'subsection' => true,
-		'desc'       => esc_html__( 'Chnage mobile Menu option here', 'resox' ),
+		'desc'       => esc_html__( 'Chnage mobile Menu option here', 'dvprintplan' ),
 		'icon'       => 'el el-home',
 		'fields'     => array(
 			array(
 				'id'    => $opt_prefix . 'mobile_menu_logo',
 				'type'  => 'media',
 				'url'   => true,
-				'title' => esc_html__( 'mobile logo', 'resox' ),
+				'title' => esc_html__( 'mobile logo', 'dvprintplan' ),
 			),
 			array(
 				'id'    => $opt_prefix . 'mobile_menu_contact',
 				'type'  => 'ace_editor',
-				'title' => esc_html__( 'mobile contact info', 'resox' ),
+				'title' => esc_html__( 'mobile contact info', 'dvprintplan' ),
 			),
 			array(
 				'id'    => $opt_prefix . 'mobile_menu_social',
 				'type'  => 'ace_editor',
-				'title' => esc_html__( 'mobile contact social', 'resox' ),
+				'title' => esc_html__( 'mobile contact social', 'dvprintplan' ),
 			),
 		),
 	)
@@ -297,36 +297,36 @@ Redux::setSection(
 Redux::setSection(
 	$opt_name,
 	array(
-		'title'            => esc_html__( 'Typography', 'resox' ),
+		'title'            => esc_html__( 'Typography', 'dvprintplan' ),
 		'id'               => 'fonts_settings',
-		'desc'             => esc_html__( 'Typography', 'resox' ),
+		'desc'             => esc_html__( 'Typography', 'dvprintplan' ),
 		'customizer_width' => '400px',
 		'icon'             => 'el el-font',
 		'fields'           => array(
 			array(
 				'id'       => 'enable_google_fonts',
 				'type'     => 'switch',
-				'title'    => esc_html__( 'Google Fonts', 'resox' ),
-				'subtitle' => esc_html__( 'Enable or Disable Google Fonts', 'resox' ),
+				'title'    => esc_html__( 'Google Fonts', 'dvprintplan' ),
+				'subtitle' => esc_html__( 'Enable or Disable Google Fonts', 'dvprintplan' ),
 				'default'  => true,
-				'off'      => esc_html__( 'Disable', 'resox' ),
-				'on'       => esc_html__( 'Enable', 'resox' ),
+				'off'      => esc_html__( 'Disable', 'dvprintplan' ),
+				'on'       => esc_html__( 'Enable', 'dvprintplan' ),
 			),
 			array(
 				'id'       => 'enable_typography',
 				'type'     => 'switch',
-				'title'    => esc_html__( 'Typography', 'resox' ),
-				'subtitle' => esc_html__( 'Enable or Disable Typography', 'resox' ),
+				'title'    => esc_html__( 'Typography', 'dvprintplan' ),
+				'subtitle' => esc_html__( 'Enable or Disable Typography', 'dvprintplan' ),
 				'default'  => false,
-				'off'      => esc_html__( 'Disable', 'resox' ),
-				'on'       => esc_html__( 'Enable', 'resox' ),
+				'off'      => esc_html__( 'Disable', 'dvprintplan' ),
+				'on'       => esc_html__( 'Enable', 'dvprintplan' ),
 			),
 			array(
 				'required'   => array( 'enable_typography', '=', '1' ),
 				'id'         => $opt_prefix . '-body_typography',
 				'type'       => 'typography',
-				'title'      => esc_html__( 'Body Typography', 'resox' ),
-				'subtitle'   => esc_html__( 'Select body font family, size, line height, color and weight.', 'resox' ),
+				'title'      => esc_html__( 'Body Typography', 'dvprintplan' ),
+				'subtitle'   => esc_html__( 'Select body font family, size, line height, color and weight.', 'dvprintplan' ),
 				'text-align' => false,
 				'subsets'    => false,
 				'output'     => array( 'body' ),
@@ -336,8 +336,8 @@ Redux::setSection(
 				'required'   => array( 'enable_typography', '=', '1' ),
 				'id'         => $opt_prefix . '-heading-1-typography',
 				'type'       => 'typography',
-				'title'      => esc_html__( 'H1 Font', 'resox' ),
-				'subtitle'   => esc_html__( 'Select heading font family and weight.', 'resox' ),
+				'title'      => esc_html__( 'H1 Font', 'dvprintplan' ),
+				'subtitle'   => esc_html__( 'Select heading font family and weight.', 'dvprintplan' ),
 				'google'     => true,
 				'text-align' => false,
 				'output'     => array( 'h1' ),
@@ -346,8 +346,8 @@ Redux::setSection(
 				'required'   => array( 'enable_typography', '=', '1' ),
 				'id'         => $opt_prefix . '-heading-2-typography',
 				'type'       => 'typography',
-				'title'      => esc_html__( 'H2 Font', 'resox' ),
-				'subtitle'   => esc_html__( 'Select heading font family and weight.', 'resox' ),
+				'title'      => esc_html__( 'H2 Font', 'dvprintplan' ),
+				'subtitle'   => esc_html__( 'Select heading font family and weight.', 'dvprintplan' ),
 				'google'     => true,
 				'text-align' => false,
 				'output'     => array( 'h2' ),
@@ -357,8 +357,8 @@ Redux::setSection(
 				'required'   => array( 'enable_typography', '=', '1' ),
 				'id'         => $opt_prefix . '-heading-3-typography',
 				'type'       => 'typography',
-				'title'      => esc_html__( 'H3 Font', 'resox' ),
-				'subtitle'   => esc_html__( 'Select heading font family and weight.', 'resox' ),
+				'title'      => esc_html__( 'H3 Font', 'dvprintplan' ),
+				'subtitle'   => esc_html__( 'Select heading font family and weight.', 'dvprintplan' ),
 				'google'     => true,
 				'text-align' => false,
 				'output'     => array( 'h3' ),
@@ -367,8 +367,8 @@ Redux::setSection(
 				'required'   => array( 'enable_typography', '=', '1' ),
 				'id'         => $opt_prefix . '-heading-4-typography',
 				'type'       => 'typography',
-				'title'      => esc_html__( 'H4 Font', 'resox' ),
-				'subtitle'   => esc_html__( 'Select heading font family and weight.', 'resox' ),
+				'title'      => esc_html__( 'H4 Font', 'dvprintplan' ),
+				'subtitle'   => esc_html__( 'Select heading font family and weight.', 'dvprintplan' ),
 				'google'     => true,
 				'text-align' => false,
 				'output'     => array( 'h4' ),
@@ -377,8 +377,8 @@ Redux::setSection(
 				'required'   => array( 'enable_typography', '=', '1' ),
 				'id'         => $opt_prefix . '-heading-5-typography',
 				'type'       => 'typography',
-				'title'      => esc_html__( 'H5 Font', 'resox' ),
-				'subtitle'   => esc_html__( 'Select heading font family and weight.', 'resox' ),
+				'title'      => esc_html__( 'H5 Font', 'dvprintplan' ),
+				'subtitle'   => esc_html__( 'Select heading font family and weight.', 'dvprintplan' ),
 				'google'     => true,
 				'text-align' => false,
 				'output'     => array( 'h5' ),
@@ -387,8 +387,8 @@ Redux::setSection(
 				'required'   => array( 'enable_typography', '=', '1' ),
 				'id'         => $opt_prefix . '-heading-6-typography',
 				'type'       => 'typography',
-				'title'      => esc_html__( 'H6 Font', 'resox' ),
-				'subtitle'   => esc_html__( 'Select heading font family and weight.', 'resox' ),
+				'title'      => esc_html__( 'H6 Font', 'dvprintplan' ),
+				'subtitle'   => esc_html__( 'Select heading font family and weight.', 'dvprintplan' ),
 				'google'     => true,
 				'text-align' => false,
 				'output'     => array( 'h6' ),
@@ -400,7 +400,7 @@ Redux::setSection(
 Redux::setSection(
 	$opt_name,
 	array(
-		'title'  => esc_html__( 'Breadcrumb area', 'resox' ),
+		'title'  => esc_html__( 'Breadcrumb area', 'dvprintplan' ),
 		'id'     => 'breadcrumb_area',
 		'icon'   => 'el el-home',
 		'fields' => array(
@@ -408,17 +408,17 @@ Redux::setSection(
 			array(
 				'id'      => $opt_prefix . 'blog_breadcrumb_switch',
 				'type'    => 'switch',
-				'title'   => esc_html__( 'Blog breadcrumb on off switch', 'resox' ),
+				'title'   => esc_html__( 'Blog breadcrumb on off switch', 'dvprintplan' ),
 				'default' => false,
-				'on'      => esc_html__( 'Enable', 'resox' ),
-				'off'     => esc_html__( 'Disable', 'resox' ),
+				'on'      => esc_html__( 'Enable', 'dvprintplan' ),
+				'off'     => esc_html__( 'Disable', 'dvprintplan' ),
 			),
 			array(
 				'required' => array( $opt_prefix . 'blog_breadcrumb_switch', '=', '1' ),
 				'id'       => $opt_prefix . 'blog_breadcrumb_bg',
 				'type'     => 'background',
 				'url'      => true,
-				'title'    => esc_html__( 'Blog breadcrumb background', 'resox' ),
+				'title'    => esc_html__( 'Blog breadcrumb background', 'dvprintplan' ),
 				'output'   => array(
 					'background' => '.blog-breadcrumb',
 				),
@@ -427,23 +427,23 @@ Redux::setSection(
 				'required' => array( $opt_prefix . 'blog_breadcrumb_switch', '=', '1' ),
 				'id'       => $opt_prefix . 'blog_breadcrumb_content',
 				'type'     => 'text',
-				'title'    => esc_html__( 'Blog breadcrumb title', 'resox' ),
-				'default'  => esc_html__( 'Blog Page', 'resox' ),
+				'title'    => esc_html__( 'Blog breadcrumb title', 'dvprintplan' ),
+				'default'  => esc_html__( 'Blog Page', 'dvprintplan' ),
 			),
 			array(
 				'id'      => $opt_prefix . 'blog_single_breadcrumb_switch',
 				'type'    => 'switch',
-				'title'   => esc_html__( 'Blog Single breadcrumb on off switch', 'resox' ),
+				'title'   => esc_html__( 'Blog Single breadcrumb on off switch', 'dvprintplan' ),
 				'default' => false,
-				'on'      => esc_html__( 'Enable', 'resox' ),
-				'off'     => esc_html__( 'Disable', 'resox' ),
+				'on'      => esc_html__( 'Enable', 'dvprintplan' ),
+				'off'     => esc_html__( 'Disable', 'dvprintplan' ),
 			),
 			array(
 				'required' => array( $opt_prefix . 'blog_single_breadcrumb_switch', '=', '1' ),
 				'id'       => $opt_prefix . 'blog_single_breadcrumb_bg',
 				'type'     => 'background',
 				'url'      => true,
-				'title'    => esc_html__( 'Blog Single breadcrumb background', 'resox' ),
+				'title'    => esc_html__( 'Blog Single breadcrumb background', 'dvprintplan' ),
 				'output'   => array(
 					'background' => '.blog-single-breadcrumb',
 				),
@@ -452,8 +452,8 @@ Redux::setSection(
 				'required' => array( $opt_prefix . 'blog_single_breadcrumb_switch', '=', '1' ),
 				'id'       => $opt_prefix . 'blog_single_breadcrumb_content',
 				'type'     => 'text',
-				'title'    => esc_html__( 'Blog single breadcrumb title', 'resox' ),
-				'default'  => esc_html__( 'Blog Details', 'resox' ),
+				'title'    => esc_html__( 'Blog single breadcrumb title', 'dvprintplan' ),
+				'default'  => esc_html__( 'Blog Details', 'dvprintplan' ),
 			),
 		),
 	)
@@ -461,35 +461,35 @@ Redux::setSection(
 Redux::setSection(
 	$opt_name,
 	array(
-		'title'  => esc_html__( 'Blog option', 'resox' ),
+		'title'  => esc_html__( 'Blog option', 'dvprintplan' ),
 		'id'     => 'blog_option_panale',
-		'desc'   => esc_html__( 'Change blog option', 'resox' ),
+		'desc'   => esc_html__( 'Change blog option', 'dvprintplan' ),
 		'icon'   => 'el el-home',
 		'fields' => array(
 			array(
 				'id'      => $opt_prefix . 'blog_style',
 				'type'    => 'select',
-				'title'   => esc_html__( 'Blog style', 'resox' ),
+				'title'   => esc_html__( 'Blog style', 'dvprintplan' ),
 				'options' => array(
-					'1' => esc_html__( 'One', 'resox' ),
-					'2' => esc_html__( 'Two', 'resox' ),
+					'1' => esc_html__( 'One', 'dvprintplan' ),
+					'2' => esc_html__( 'Two', 'dvprintplan' ),
 				),
 			),
 			array(
 				'id'      => $opt_prefix . 'blog_single_social',
 				'type'    => 'switch',
-				'title'   => esc_html__( 'social share', 'resox' ),
+				'title'   => esc_html__( 'social share', 'dvprintplan' ),
 				'default' => false,
-				'on'      => esc_html__( 'Enable', 'resox' ),
-				'off'     => esc_html__( 'Disable', 'resox' ),
+				'on'      => esc_html__( 'Enable', 'dvprintplan' ),
+				'off'     => esc_html__( 'Disable', 'dvprintplan' ),
 			),
 			array(
 				'id'      => $opt_prefix . 'blog_authore_switch',
 				'type'    => 'switch',
-				'title'   => esc_html__( 'Blog authore box on off switch', 'resox' ),
+				'title'   => esc_html__( 'Blog authore box on off switch', 'dvprintplan' ),
 				'default' => false,
-				'on'      => esc_html__( 'Enable', 'resox' ),
-				'off'     => esc_html__( 'Disable', 'resox' ),
+				'on'      => esc_html__( 'Enable', 'dvprintplan' ),
+				'off'     => esc_html__( 'Disable', 'dvprintplan' ),
 			),
 		),
 	)
@@ -497,7 +497,7 @@ Redux::setSection(
 Redux::setSection(
 	$opt_name,
 	array(
-		'title'  => esc_html__( 'Elementor widget for Footer', 'resox' ),
+		'title'  => esc_html__( 'Elementor widget for Footer', 'dvprintplan' ),
 		'id'     => 'footer_widget_elementor_lib',
 		'icon'   => 'el el-home',
 		'fields' => array(
@@ -505,8 +505,8 @@ Redux::setSection(
 				'id'      => $opt_prefix . 'footer_left_widget_elementor',
 				'type'    => 'select',
 				'multi'   => true,
-				'title'   => esc_html__( 'Footer widget', 'resox' ),
-				'options' => resox_elementor_library(),
+				'title'   => esc_html__( 'Footer widget', 'dvprintplan' ),
+				//'options' => dvprintplan_elementor_library(),
 			),
 		),
 	)
@@ -514,20 +514,20 @@ Redux::setSection(
 Redux::setSection(
 	$opt_name,
 	array(
-		'title'  => esc_html__( 'Footer option', 'resox' ),
-		'id'     => 'resox_footer_area',
-		'desc'   => esc_html__( 'Chnage footer option here', 'resox' ),
+		'title'  => esc_html__( 'Footer option', 'dvprintplan' ),
+		'id'     => 'dvprintplan_footer_area',
+		'desc'   => esc_html__( 'Chnage footer option here', 'dvprintplan' ),
 		'icon'   => 'el el-home',
 		'fields' => array(
 			array(
 				'id'    => $opt_prefix . 'footer_copyright',
 				'type'  => 'textarea',
-				'title' => esc_html__( 'Copyright Text', 'resox' ),
+				'title' => esc_html__( 'Copyright Text', 'dvprintplan' ),
 			),
 			array(
 				'id'    => $opt_prefix . 'footer_link',
 				'type'  => 'ace_editor',
-				'title' => esc_html__( 'Footer Links', 'resox' ),
+				'title' => esc_html__( 'Footer Links', 'dvprintplan' ),
 			),
 		),
 	)
@@ -535,24 +535,24 @@ Redux::setSection(
 Redux::setSection(
 	$opt_name,
 	array(
-		'title'  => esc_html__( 'Color option', 'resox' ),
-		'id'     => 'resox_color_area',
-		'desc'   => esc_html__( 'Chnage Color option here', 'resox' ),
+		'title'  => esc_html__( 'Color option', 'dvprintplan' ),
+		'id'     => 'dvprintplan_color_area',
+		'desc'   => esc_html__( 'Chnage Color option here', 'dvprintplan' ),
 		'icon'   => 'el el-home',
 		'fields' => array(
 			array(
 				'id'          => $opt_prefix . 'main_color',
 				'type'        => 'color',
-				'title'       => esc_html__( 'Primary Color', 'resox' ),
-				'subtitle'    => esc_html__( 'Pick a color for the theme.', 'resox' ),
+				'title'       => esc_html__( 'Primary Color', 'dvprintplan' ),
+				'subtitle'    => esc_html__( 'Pick a color for the theme.', 'dvprintplan' ),
 				'validate'    => 'color',
 				'transparent' => false,
 			),
 			array(
 				'id'          => $opt_prefix . 'secondary_color',
 				'type'        => 'color',
-				'title'       => esc_html__( 'Secondary Color', 'resox' ),
-				'subtitle'    => esc_html__( 'Pick a color for the theme.', 'resox' ),
+				'title'       => esc_html__( 'Secondary Color', 'dvprintplan' ),
+				'subtitle'    => esc_html__( 'Pick a color for the theme.', 'dvprintplan' ),
 				'validate'    => 'color',
 				'transparent' => false,
 			),

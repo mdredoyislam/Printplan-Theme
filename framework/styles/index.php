@@ -6,10 +6,11 @@ class printplan_Style {
 	public function enqueue_style() {
 		wp_enqueue_style( 'font-awesome-all', PRINTPLAN_CSS_URL . 'font-awesome-all.css', false, '1' );
 		wp_enqueue_style( 'flaticon', PRINTPLAN_CSS_URL . 'flaticon.css', false, '1' );
-		wp_enqueue_style( 'owl', PRINTPLAN_CSS_URL . 'owl.css', false, '1' );
 		wp_enqueue_style( 'bootstrap', PRINTPLAN_CSS_URL . 'bootstrap.min.css', false, time() );
-		wp_enqueue_style( 'jquery-fancybox', PRINTPLAN_CSS_URL . 'jquery.fancybox.min.css', false, '1' );
 		wp_enqueue_style( 'animate', PRINTPLAN_CSS_URL . 'animate.css', false, '1' );
+		wp_enqueue_style( 'owl-carousel', PRINTPLAN_CSS_URL . 'owl.carousel.min.css', false, '1' );
+		wp_enqueue_style( 'owl-theme', PRINTPLAN_CSS_URL . 'owl.theme.default.min.css', false, '1' );
+		wp_enqueue_style( 'fancybox', PRINTPLAN_CSS_URL . 'jquery.fancybox.min.css', false, time() );
 		wp_enqueue_style( 'printplan-theme-global', PRINTPLAN_CSS_URL . 'global.css', false, time() );
 		wp_enqueue_style( 'printplan-style', get_stylesheet_uri(), null, time() );
 		wp_enqueue_style( 'printplan-theme-style', PRINTPLAN_CSS_URL . 'theme-style.css', false, time() );
@@ -20,16 +21,3 @@ class printplan_Style {
 	}
 }
 $printplan_style = new printplan_Style();
-
-
-/*
-function printplan_custom_css() {
-	$printplan_custom_inline_style = '';
-
-	if ( function_exists( 'printplan_get_custom_styles' ) ) {
-		$printplan_custom_inline_style = printplan_get_custom_styles();
-	}
-	wp_add_inline_style( 'printplan-theme-style', $printplan_custom_inline_style );
-}
-add_action( 'wp_enqueue_scripts', 'printplan_custom_css', 20 );
-*/

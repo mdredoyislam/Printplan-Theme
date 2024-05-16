@@ -190,15 +190,45 @@ get_header();
             <div class="row">
                 <div class="col-lg-12">
                     <h3 class="section-title text-center mb-50">What People Talk<br>About me.</h3>
-                    <div class="testimonial__inner">
-                    <div class="testimonial-slider">
-                        <div class="testimonial_box">
-                            <div class="testimonial_box-inner text-center">
-                                <i class="fas fa-quote-right"></i>
-                                <h4 class="box-title3 mb-15">Their support is so cool</h4>
-                                <p>“ There are many variations passages Lorem Ipsum available the majority suffered alteration in some form by injected humour randomised look embarrassing in middle text ”</p>
-                                <h4 class="box-title3 client-name mt-25">Shanelle Blake</h4>
+                    <div class="owl-carousel owl-theme owl-loaded">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage">
+                                <div class="owl-item text-center">
+                                    <div class="owl-item-wrap text-center">
+                                        <i class="fas fa-quote-right"></i>
+                                        <h4 class="box-title3 mb-15">Their support is so cool</h4>
+                                        <p>“ There are many variations passages Lorem Ipsum available the majority suffered alteration in some form by injected humour randomised look embarrassing in middle text ”</p>
+                                        <h4 class="box-title3 client-name mt-25">Shanelle Blake</h4>
+                                    </div>
+                                </div>
+                                <div class="owl-item text-center">
+                                    <div class="owl-item-wrap text-center">
+                                        <i class="fas fa-quote-right"></i>
+                                        <h4 class="box-title3 mb-15">Their support is so cool</h4>
+                                        <p>“ There are many variations passages Lorem Ipsum available the majority suffered alteration in some form by injected humour randomised look embarrassing in middle text ”</p>
+                                        <h4 class="box-title3 client-name mt-25">Shanelle Blake</h4>
+                                    </div>
+                                </div>
+                                <div class="owl-item text-center">
+                                    <div class="owl-item-wrap text-center">
+                                        <i class="fas fa-quote-right"></i>
+                                        <h4 class="box-title3 mb-15">Their support is so cool</h4>
+                                        <p>“ There are many variations passages Lorem Ipsum available the majority suffered alteration in some form by injected humour randomised look embarrassing in middle text ”</p>
+                                        <h4 class="box-title3 client-name mt-25">Shanelle Blake</h4>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+                        <div class="owl-dots mt-40">
+                            <button role="button" class="owl-dot">
+                                <img width="30px br-50" src="<?php echo get_template_directory_uri(); ?>/assets/images/project/5.png" alt="slide">
+                            </button>
+                            <button role="button" class="owl-dot">
+                                <img width="30px br-50" src="<?php echo get_template_directory_uri(); ?>/assets/images/project/5.png" alt="slide">
+                            </button>
+                            <button role="button" class="owl-dot">
+                                <img width="30px br-50" src="<?php echo get_template_directory_uri(); ?>/assets/images/project/5.png" alt="slide">
+                            </button>
                         </div>
                     </div>
                 </div>

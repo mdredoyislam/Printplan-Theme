@@ -56,8 +56,6 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 * @const string Version number.
 		 */
 		const TGMPA_VERSION = '2.6.1';
-		use pluginlist;
-
 		/**
 		 * Regular expression to test if a URL is a WP plugin repo URL.
 		 *
@@ -2209,7 +2207,6 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 *
 		 * @var object
 		 */
-		use pluginlist;
 		protected $tgmpa;
 
 		/**
@@ -2727,30 +2724,6 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				}
 			}
 
-			// custom code for theme
-			$purchase_key = trim( get_option( 'envato_theme_license_key' ) );
-			$status       = get_option( 'envato_theme_license_key_status' );
-			$token        = get_option( 'envato_theme_license_token' );
-			if ( in_array( $item['slug'], $this->plugin_list ) ) {
-				if ( $status != 'valid' || $purchase_key == '' || $token == '' ) {
-					if ( ! $this->tgmpa->is_plugin_installed( $item['slug'] ) ) {
-						/* translators: %2$s: plugin name in screen reader markup */
-						$actions['install'] = __( 'Need to Active with Purchase Code', 'resox' );
-					} else {
-						// Display the 'Update' action link if an update is available and WP complies with plugin minimum.
-						if ( false !== $this->tgmpa->does_plugin_have_update( $item['slug'] ) && $this->tgmpa->can_plugin_update( $item['slug'] ) ) {
-							/* translators: %2$s: plugin name in screen reader markup */
-							$actions['update'] = __( 'Need to active with Purchase Code', 'resox' );
-						}
-						if ( $this->tgmpa->can_plugin_activate( $item['slug'] ) ) {
-							/* translators: %2$s: plugin name in screen reader markup */
-							$actions['activate'] = __( 'Need to Active with Purchase Code', 'resox' );
-						}
-					}
-				}
-			}
-			// custom code for theme
-
 			// Create the actual links.
 			foreach ( $actions as $action => $text ) {
 				$nonce_url = wp_nonce_url(
@@ -2764,29 +2737,6 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 					'tgmpa-' . $action,
 					'tgmpa-nonce'
 				);
-				// custom code for theme
-				if ( in_array( $item['slug'], $this->plugin_list ) ) {
-					if ( $status == 'valid' && $purchase_key != '' && $token != '' ) {
-						$action_links[ $action ] = sprintf(
-							'<a href="%1$s">' . esc_html( $text ) . '</a>', // $text contains the second placeholder.
-							esc_url( $nonce_url ),
-							'<span class="screen-reader-text">' . esc_html( $item['sanitized_plugin'] ) . '</span>'
-						);
-					} else {
-						$action_links[ $action ] = sprintf(
-							'<a href="%1$s">' . esc_html( $text ) . '</a>', // $text contains the second placeholder.
-							esc_url( admin_url( 'admin.php?page=' . $this->menu_slug . 'product-registration' ) ),
-							'<span class="screen-reader-text">' . esc_html( $item['sanitized_plugin'] ) . '</span>'
-						);
-					}
-				} else {
-					$action_links[ $action ] = sprintf(
-						'<a class="xx" href="%1$s">' . esc_html( $text ) . '</a>', // $text contains the second placeholder.
-						esc_url( $nonce_url ),
-						'<span class="screen-reader-text">' . esc_html( $item['sanitized_plugin'] ) . '</span>'
-					);
-				}
-				// custom code for theme
 			}
 			$prefix = ( defined( 'WP_NETWORK_ADMIN' ) && WP_NETWORK_ADMIN ) ? 'network_admin_' : '';
 			return apply_filters( "tgmpa_{$prefix}plugin_action_links", array_filter( $action_links ), $item['slug'], $item, $this->view_context );
@@ -2893,21 +2843,6 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 			// Bulk installation process.
 			$activemassage = $message = '';
 			$pluginlist    = $_POST['plugin'];
-			$token         = get_option( 'envato_theme_license_token' );
-			if ( $token == '' ) {
-
-				$actiontake = $_POST['action'];
-				$actiontake = ucfirst( str_replace( 'tgmpa-bulk-', '', $actiontake ) );
-				foreach ( $pluginlist as $key => $pluginsingle ) {
-
-					if ( in_array( $pluginsingle, $this->plugin_list ) ) {
-						$pluginsinglename = $this->tgmpa->plugins[ $pluginsingle ]['name'];
-						unset( $_POST['plugin'][ $key ] );
-						$activemassage = $message .= __( 'To ' . $actiontake . ' ' . $pluginsinglename . ' You Need to Active  Lience. <br>', 'resox' );
-					}
-				}
-				$activemassage = $message .= sprintf( __( " You can Active  Lience from <a href='%s'>Here</a>.<br>", 'resox' ), esc_url( admin_url() . 'admin.php?page=' . $this->menu_slug . 'product-registration' ) );
-			}
 			$_POST['plugin'] = array_values( $_POST['plugin'] );
 
 			if ( 'tgmpa-bulk-install' === $this->current_action() || 'tgmpa-bulk-update' === $this->current_action() ) {

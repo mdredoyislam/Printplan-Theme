@@ -314,4 +314,40 @@
 		time: 5000
 	});
 
+
+	//Owl Carosel Slider
+	initSlider();
+
+	function initSlider(){
+		$(".owl-carousel").owlCarousel({
+			items: 1,
+			singleItem: true,
+			navigation:true,
+			loop: true,
+			autoplay: true,
+			nav: true,
+			navContainer: false,
+			onInitialized: startProgressBar,
+			onTranslate: resetProgressBar,
+			onTranslated: startProgressBar,
+			dots: true,
+			dotsData: true,
+			dotsContainer: '.owl-dots',
+			navText : ["Preview","next"]
+		});
+	}
+	function startProgressBar(){
+		// apply keyframe animation
+		$(".owl-dot.active .slide-progress").css({
+			width: "100%",
+			transition: "width 5000ms"
+		});
+	}
+	function resetProgressBar(){
+		$(".owl-dot .slide-progress").css({
+			width: 0,
+			transition: "width 0ms"
+		});
+	}
+
 })(window.jQuery);

@@ -1,38 +1,38 @@
 <?php
 
-function desvert_import_files() {
+function printplan_import_files() {
     return [
       [
-        'import_file_name'           => 'Home One',
-        'categories'                 => ['Home Page Template' ],
+        'import_file_name'           => 'Main Site',
+        'categories'                 => ['Home Pages' ],
         'import_file_url'            => get_template_directory() . '/ocdi/demo-content2.xml',
         'import_widget_file_url'     => get_template_directory() . '/ocdi/widgets2.json',
         'import_customizer_file_url' => get_template_directory() . '/ocdi/customizer2.dat',
-        'import_preview_image_url'   => get_template_directory_uri() . '/inc/demo-content/demo1.jpg',
+        'import_preview_image_url'   => PRINTPLAN_THEME_URI . '/framework/demo-data/demo-content/demo1.png',
         'preview_url'                => 'https://www.desvert.com',
         'import_notice'              => 'After Import The Demo dat You need Setup Your Home Page & Blog Pages from Settings > Reading Settings > HomePage With Changes The Menu Options',
       ],
       [
         'import_file_name'           => 'Home Two',
-        'categories'                 => [ 'Home Page Template'],
+        'categories'                 => [ 'Home Pages'],
         'import_file_url'            => get_template_directory() . '/ocdi/demo-content2.xml',
         'import_widget_file_url'     => get_template_directory() . '/ocdi/widgets2.json',
         'import_customizer_file_url' => get_template_directory() . '/ocdi/customizer2.dat',
-        'import_preview_image_url'   => get_template_directory_uri() . '/inc/demo-content/demo2.jpg',
+        'import_preview_image_url'   => PRINTPLAN_THEME_URI . '/framework/demo-data/demo-content/demo2.png',
         'preview_url'                => 'https://www.desvert.com',
         'import_notice'              => 'After Import The Demo dat You need Setup Your Home Page & Blog Pages from Settings > Reading Settings > HomePage With Changes The Menu Options',
       ],
       [
         'import_file_name'           => 'About Page',
-        'categories'                 => [ 'Immer Page Template'],
+        'categories'                 => [ 'Immer Pages'],
         'import_file_url'            => get_template_directory() . '/ocdi/demo-content2.xml',
         'import_widget_file_url'     => get_template_directory() . '/ocdi/widgets2.json',
         'import_customizer_file_url' => get_template_directory() . '/ocdi/customizer2.dat',
-        'import_preview_image_url'   => get_template_directory_uri() . '/inc/demo-content/demo3.jpg',
+        'import_preview_image_url'   => PRINTPLAN_THEME_URI . '/framework/demo-data/demo-content/demo3.png',
         'preview_url'                => 'https://www.desvert.com/about-desvert/',
         'import_notice'              => 'After Import The Demo dat You need Setup Your Home Page & Blog Pages from Settings > Reading Settings > HomePage With Changes The Menu Options',
       ],
     ];
   }
-  add_filter( 'ocdi/import_files', 'desvert_import_files' );
+  add_filter( 'ocdi/import_files', 'printplan_import_files' );
 ?>

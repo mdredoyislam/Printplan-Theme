@@ -284,6 +284,21 @@ Header Menu Style
 .grid-item:hover .project-linker{
     transform: scale(1);
 }
+/* Testimonial Section */
+.owl-item-wrap {
+    max-width: 647px;
+}
+.owl-prev, .owl-next {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.owl-next {
+    left: unset;
+    right: 0;
+}
+
 .counter-wrap{
     border-top: var(--common-border);
 }
