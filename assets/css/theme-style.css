@@ -285,6 +285,11 @@ Header Menu Style
     transform: scale(1);
 }
 /* Testimonial Section */
+.owl-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .owl-item-wrap {
     max-width: 647px;
 }
@@ -364,4 +369,112 @@ Header Menu Style
 .form-wrap button {
     min-height: 58px;
     border-radius: 0;
+}
+.owl-theme .owl-nav button.owl-prev, .owl-theme .owl-nav button.owl-next{
+    font-family: var(--primary-font) !important;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #03041C !important;
+    padding: 42px 29px !important;
+    background-color: transparent;
+    font-weight: 500;
+}
+.owl-theme .owl-nav button.owl-prev{
+    border-right: var(--common-border);
+}
+.owl-theme .owl-nav button.owl-next{
+    border-left: var(--common-border);
+}
+.owl-theme .owl-nav button.owl-prev:hover, .owl-theme .owl-nav button.owl-next:hover{
+    background: transparent;
+}
+.owl-dots button img, .owl-dots button img.review-img{
+    width: 60px;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: all linear.3s;
+}
+.active .review-img{
+    border: 1px solid var(--primary-color);
+    transform: scale(1.3) !important;
+    z-index: 1;
+    position: relative;
+}
+.owl-item-wrap > img{
+    width: 26px !important;
+    margin: auto;
+}
+
+/*----------------------------------
+   Error Page Style
+------------------------------------*/
+.error-404{
+    padding: 150px 0;
+}
+.error-wrap .error-title{
+    font-size: 100px;
+    font-weight: 800;
+}
+.error-wrap .error-sub-title{
+    font-size: 36px;
+}
+.error-wrap .error-title span {
+    line-height: 100px;
+    color: var(--primary-color);
+    transform: scale(1);
+    animation: zoomInOut 1s linear infinite
+}
+
+/*----------------------------------------
+Single Page Template Design
+----------------------------------------*/
+.image-box{
+    overflow: hidden;
+    border-radius: 5px;
+}
+.image-box img {
+    width: 100%;
+    border-radius: 5px;
+    transform: scale(1);
+    transition: all linear.3s;
+}
+.image-box:hover img {
+    transform: scale(1.1);
+}
+.post-info {
+    column-gap: 40px;
+    align-items: center;
+}
+.post-info li i, .post-info li svg {
+    margin-right: 10px;
+    font-size: 15px;
+}
+.post-info li a, .post-info li {
+    color: var(--dark-color);
+    text-transform: capitalize !important;
+    transition: all linear.3s;
+}
+.post-info li a:hover {
+    color: var(--primary-color);
+}
+.comments-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+.comments-area {
+    margin-top: 50px;
+}
+.comment-form-cookies-consent {
+    margin-top: 20px;
+}
+.comment-author img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--primary-color);
+    margin-right: 10px;
+}
+.comment-author .fn a {
+    text-transform: capitalize;
+    color: var(--dark-color);
 }

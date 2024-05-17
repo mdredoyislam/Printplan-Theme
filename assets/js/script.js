@@ -319,7 +319,7 @@
 	initSlider();
 
 	function initSlider(){
-		$(".owl-carousel").owlCarousel({
+		$(".testimonial-slide").owlCarousel({
 			items: 1,
 			singleItem: true,
 			navigation:true,
@@ -349,5 +349,7 @@
 			transition: "width 0ms"
 		});
 	}
+
+	//var commentData = $(document).jQuerySelector()
 
 })(window.jQuery);

@@ -6,35 +6,53 @@
  *
  * @package DVPrintplan
  */
-
 get_header();
-?>
 
-	<main id="primary" class="site-main">
+if ( is_active_sidebar( 'sidebar-1' ) ) :
+	$blog_post_list_class = 'col-lg-8';
+	else :
+		$blog_post_list_class = 'col-lg-12';
+	endif;
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+	$blog_single_base_css   = 1;
+	$blog_single_base_class = 'base-blog-single';
+	if ( $blog_single_base_css == 1 ) :
+		$blog_single_base_class = '';
+	endif;
 
-			get_template_part( 'template-parts/content', get_post_type() );
+	$blog_single_breadcrumb_class  = 'blog-single-breadcrumb-active';
+	$blog_single_breadcrumb_switch = 1;
+	if ( $blog_single_breadcrumb_switch == 1 ) :
+		$blog_single_breadcrumb_class = '';
+	endif;
+	?>
 
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'dvprintplan' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'dvprintplan' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
+<!-- sidebar-page-container -->
+<section class="blog-details sidebar-page-container pt-100 pb-100 <?php echo esc_attr( $blog_single_base_class . ' ' . $blog_single_breadcrumb_class ); ?>">
+	<div class="container">
+		<div class="row clearfix">
+			<div class="<?php echo esc_attr( $blog_post_list_class ); ?> col-md-12 col-sm-12 content-side">
+				<div class="blog-details-content pr-35">
+					<?php
+					if ( have_posts() ) :
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-	</main><!-- #main -->
-
+						while ( have_posts() ) :
+							the_post();
+							get_template_part( 'template-parts/single/content' );
+						endwhile;
+					endif;
+					?>
+				</div>
+			</div>
+			<?php if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
+			<div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+				<div class="sidebar default-sidebar">
+					<?php get_sidebar(); ?>
+				</div>
+			</div>
+			<?php } ?>
+		</div>
+	</div>
+</section>
 <?php
-get_sidebar();
 get_footer();

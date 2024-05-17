@@ -4,17 +4,14 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package DVPrintplan
+ * @package dvprintplan
  */
 
 ?>
 
-<section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'dvprintplan' ); ?></h1>
-	</header><!-- .page-header -->
+<section class="no-results not-found ri-fat-not-found">
 
-	<div class="page-content">
+	<div class="page-content sidebar news-block-one ">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
@@ -34,18 +31,25 @@
 		elseif ( is_search() ) :
 			?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'dvprintplan' ); ?></p>
+			<p class="no-found-text"><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'dvprintplan' ); ?></p>
+			<div class="nothing-found-search">
 			<?php
-			get_search_form();
-
+				get_search_form();
+			?>
+			</div>
+			<?php
 		else :
 			?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'dvprintplan' ); ?></p>
+			<p class="no-found-text"><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'dvprintplan' ); ?></p>
+			<div class="nothing-found-search">
 			<?php
-			get_search_form();
-
+				get_search_form();
+			?>
+			</div>
+			<?php
 		endif;
 		?>
 	</div><!-- .page-content -->
 </section><!-- .no-results -->
+

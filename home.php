@@ -190,12 +190,12 @@ get_header();
             <div class="row">
                 <div class="col-lg-12">
                     <h3 class="section-title text-center mb-50">What People Talk<br>About me.</h3>
-                    <div class="owl-carousel owl-theme owl-loaded">
+                    <div class="testimonial-slide owl-carousel owl-theme owl-loaded">
                         <div class="owl-stage-outer">
                             <div class="owl-stage">
                                 <div class="owl-item text-center">
                                     <div class="owl-item-wrap text-center">
-                                        <i class="fas fa-quote-right"></i>
+                                        <img class="quote-icon mb-35" src="<?php echo get_template_directory_uri(); ?>/assets/images/quote.svg">
                                         <h4 class="box-title3 mb-15">Their support is so cool</h4>
                                         <p>“ There are many variations passages Lorem Ipsum available the majority suffered alteration in some form by injected humour randomised look embarrassing in middle text ”</p>
                                         <h4 class="box-title3 client-name mt-25">Shanelle Blake</h4>
@@ -203,7 +203,7 @@ get_header();
                                 </div>
                                 <div class="owl-item text-center">
                                     <div class="owl-item-wrap text-center">
-                                        <i class="fas fa-quote-right"></i>
+                                        <img class="quote-icon mb-35" src="<?php echo get_template_directory_uri(); ?>/assets/images/quote.svg">
                                         <h4 class="box-title3 mb-15">Their support is so cool</h4>
                                         <p>“ There are many variations passages Lorem Ipsum available the majority suffered alteration in some form by injected humour randomised look embarrassing in middle text ”</p>
                                         <h4 class="box-title3 client-name mt-25">Shanelle Blake</h4>
@@ -211,7 +211,7 @@ get_header();
                                 </div>
                                 <div class="owl-item text-center">
                                     <div class="owl-item-wrap text-center">
-                                        <i class="fas fa-quote-right"></i>
+                                        <img class="quote-icon mb-35" src="<?php echo get_template_directory_uri(); ?>/assets/images/quote.svg">
                                         <h4 class="box-title3 mb-15">Their support is so cool</h4>
                                         <p>“ There are many variations passages Lorem Ipsum available the majority suffered alteration in some form by injected humour randomised look embarrassing in middle text ”</p>
                                         <h4 class="box-title3 client-name mt-25">Shanelle Blake</h4>
@@ -219,15 +219,15 @@ get_header();
                                 </div>
                             </div>
                         </div>
-                        <div class="owl-dots mt-40">
+                        <div class="owl-dots mt-50">
                             <button role="button" class="owl-dot">
-                                <img width="30px br-50" src="<?php echo get_template_directory_uri(); ?>/assets/images/project/5.png" alt="slide">
+                                <img class="review-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/user1.png" alt="slide">
                             </button>
                             <button role="button" class="owl-dot">
-                                <img width="30px br-50" src="<?php echo get_template_directory_uri(); ?>/assets/images/project/5.png" alt="slide">
+                                <img class="review-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/user2.png" alt="slide">
                             </button>
                             <button role="button" class="owl-dot">
-                                <img width="30px br-50" src="<?php echo get_template_directory_uri(); ?>/assets/images/project/5.png" alt="slide">
+                                <img class="review-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/user3.png" alt="slide">
                             </button>
                         </div>
                     </div>
