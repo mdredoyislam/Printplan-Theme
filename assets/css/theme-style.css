@@ -431,12 +431,15 @@ Single Page Template Design
 .image-box{
     overflow: hidden;
     border-radius: 5px;
+    margin: 0;
 }
 .image-box img {
     width: 100%;
     border-radius: 5px;
     transform: scale(1);
     transition: all linear.3s;
+    object-fit: cover;
+    object-position: center center;
 }
 .image-box:hover img {
     transform: scale(1.1);
@@ -448,33 +451,40 @@ Single Page Template Design
 .post-info li i, .post-info li svg {
     margin-right: 10px;
     font-size: 15px;
+    color: var(--primary-color);
 }
-.post-info li a, .post-info li {
+.post-info li a{
+    color: #748196;
+}
+.post-info li, .box-title a {
     color: var(--dark-color);
     text-transform: capitalize !important;
     transition: all linear.3s;
 }
-.post-info li a:hover {
+.post-info li a:hover , .box-title a:hover{
     color: var(--primary-color);
 }
-.comments-title {
-    font-size: 24px;
-    margin-bottom: 30px;
+.inner-box {
+    background: var(--light);
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.06);
+    border-radius: 5px;
 }
-.comments-area {
-    margin-top: 50px;
+.lower-content {
+    padding: 30px 35px 28px 35px;
 }
-.comment-form-cookies-consent {
-    margin-top: 20px;
-}
-.comment-author img {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    border: 1px solid var(--primary-color);
-    margin-right: 10px;
-}
-.comment-author .fn a {
-    text-transform: capitalize;
+.lower-content .link a {
     color: var(--dark-color);
+    font-weight: 600;
+}
+.lower-content p {
+    margin-bottom: 25px;
+}
+.page-numbers {
+    font-size: 18px;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    padding: unset;
+    text-align: center;
+    line-height: 48px;
 }

@@ -349,7 +349,9 @@
 			transition: "width 0ms"
 		});
 	}
-
+	jQuery('.tag-cloud-link').addClass('common-btn d-inline-block');
+	jQuery('.page-numbers').addClass('common-btn');
+	jQuery('.current').addClass('common-btn-color');
 	//var commentData = $(document).jQuerySelector()
 
 })(window.jQuery);

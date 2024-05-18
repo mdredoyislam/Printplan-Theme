@@ -4,7 +4,8 @@ class printplan_Int {
 	 * top bar search compatibility.
 	 */
 	public static function printplan_search_popup() {
-		$header_on_of_search = printplan_get_options( 'header_on_of_search' );
+		//$header_on_of_search = printplan_get_options( 'header_on_of_search' );
+		$header_on_of_search = 1;
 		?>
 		<?php if ( $header_on_of_search == 1 ) : ?>
 				<div class="search-box-outer">
@@ -30,7 +31,7 @@ class printplan_Int {
 	/**
 	 * preloader compatibility.
 	 */
-	public static function printplan_preloader() {
+	/*public static function printplan_preloader() {
 		$preloader_on_off = printplan_get_options( 'preloader_on_off' );
 		$preloader_img = printplan_get_options('_site_preloader_image');
 		
@@ -75,11 +76,13 @@ class printplan_Int {
 		<?php endif; ?>
 		<?php
 	}
+	*/
 	/**
 	 * back to top compatibility.
 	 */
 	public static function printplan_back_to_top() {
-		$back_to_top_on_off = printplan_get_options( 'back_to_top_on_off' );
+		//$back_to_top_on_off = printplan_get_options( 'back_to_top_on_off' );
+		$back_to_top_on_off = 1;
 		?>
 		<?php if ( $back_to_top_on_off === '1' ) : ?>
 			<button class="scroll-top scroll-to-target" data-target="html">
@@ -90,7 +93,7 @@ class printplan_Int {
 	}
 	/**
 	 * header logo compatibility.
-	 */
+	 *//*
 	public static function printplan_header_logo() {
 		?>
 		<div class="logo-box pull-left">
@@ -109,7 +112,7 @@ class printplan_Int {
 			</figure>
 		</div>
 		<?php
-	}
+	}*/
 
 	/**
 	 * header menu compatibility.
@@ -144,7 +147,7 @@ class printplan_Int {
 
 	/**
 	 * mobile menu compatibility.
-	 */
+	 *//*
 	public static function printplan_mobile_menu() {
 		$mobile_menu_social  = printplan_get_options( 'mobile_menu_social' );
 		$mobile_menu_contact = printplan_get_options( 'mobile_menu_contact' );
@@ -184,7 +187,7 @@ class printplan_Int {
 		</div><!-- End Mobile Menu -->
 
 		<?php
-	}
+	}*/
 	/**
 	 * All header and breadcrumb.
 	 */
@@ -198,24 +201,9 @@ class printplan_Int {
 		   $breadcrumb_title = ''; // custom home or deafult
 		   $breadcrumb_class = 'custom-home-breadcrumb';
 	 elseif ( is_home() ) :
-		 $blog_breadcrumb_switch = printplan_get_options( 'blog_breadcrumb_switch' );
+		 //$blog_breadcrumb_switch = printplan_get_options( 'blog_breadcrumb_switch' );
+		 $blog_breadcrumb_switch = 1;
 		 if ( $blog_breadcrumb_switch == '1' ) :
-
-			 $blog_breadcrumb_content = printplan_get_options( 'blog_breadcrumb_content' );
-
-			 $blog_style = get_query_var( 'blog_style' );
-			 if ( ! $blog_style ) {
-				 $blog_style = printplan_get_options( 'blog_style' );
-			 }
-			 if ( $blog_style == 1 ) :
-				 $blog_breadcrumb_content = printplan_get_options( 'blog_breadcrumb_content' );
-		   elseif ( $blog_style == 2 ) :
-			   $blog_breadcrumb_content = printplan_get_options( 'blog_breadcrumb_content' );
-		   elseif ( $blog_style == 3 ) :
-			   $blog_breadcrumb_content = printplan_get_options( 'blog_breadcrumb_content' );
-		   endif;
-
-		   $breadcrumb_title = $blog_breadcrumb_content;
 	 else :
 		 $breadcrumb_title = '';
 	 endif;
@@ -225,7 +213,7 @@ class printplan_Int {
 			   $breadcrumb_class = 'blog-breadcrumb';
 	 elseif ( is_single() ) :
 		 if ( get_post_type( get_the_ID() ) == 'post' ) :
-			 $blog_single_breadcrumb_switch = printplan_get_options( 'blog_single_breadcrumb_switch' );
+			 $blog_single_breadcrumb_switch = 1;
 			 if ( $blog_single_breadcrumb_switch == '1' ) :
 				 // redux
 				 $blog_single_breadcrumb_content = printplan_get_options( 'blog_single_breadcrumb_content' );
@@ -266,7 +254,7 @@ class printplan_Int {
 		} else {
 			$printplan_show_breadcrumb = 'on';
 		}
-		$header_menu_style            = printplan_get_options( 'header_menu_style' );
+		$header_menu_style            = 2;
 		$breadcrumb_class_with_header = 'breadcrumb-class-with-header-one';
 		if ( $header_menu_style == '2' ) :
 			$breadcrumb_class_with_header = '';
@@ -309,7 +297,7 @@ class printplan_Int {
 	 * autor box compatibility.
 	 */
 	public static function printplan_authore_box() {
-		$blog_authore_switch = printplan_get_options( 'blog_authore_switch' );
+		$blog_authore_switch = 1;
 		if ( $blog_authore_switch == 1 ) :
 			global $post;
 			$display_name     = get_the_author_meta( 'display_name', $post->post_author );

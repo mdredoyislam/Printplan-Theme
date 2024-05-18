@@ -96,7 +96,7 @@ if ( post_password_required() ) {
 			$formargs = array(
 				'class_form'           => 'comment-form default-form form-wrap',
 				'id_submit'            => 'submit',
-				'title_reply_before'   => '<div class="group-title mt-45"><h2>',
+				'title_reply_before'   => '<div class="group-title mt-45 mb-10"><h2>',
 				'title_reply_after'    => '</h2></div>',
 				'title_reply'          => esc_html__( 'Leave a Comment', 'dvprintplan' ),
 				'title_reply_to'       => esc_html__( 'Leave a Comment to %s', 'dvprintplan' ),

@@ -1,12 +1,16 @@
 <?php
 /**
- * The template for displaying search results pages
+ * The main template file
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
  *
- * @package DVPrintplan
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package dvprintplan
  */
-
 get_header();
 
 if ( is_active_sidebar( 'sidebar-1' ) ) :
@@ -14,21 +18,10 @@ if ( is_active_sidebar( 'sidebar-1' ) ) :
 	else :
 		$blog_post_list_class = 'col-lg-12';
 	endif;
-	//$blog_list_base_css   = dvprintplan_get_options( 'blog_list_base_css' );
-	$blog_list_base_css   = 1;
-	$blog_list_base_class = 'base-blog-list';
-	if ( $blog_list_base_css == 1 ) :
-		$blog_list_base_class = '';
-	endif;
-	$blog_breadcrumb_class  = 'blog-breadcrumb-active';
-	//$blog_breadcrumb_switch = dvprintplan_get_options( 'blog_breadcrumb_switch' );
-	$blog_breadcrumb_switch = 1;
-	if ( $blog_breadcrumb_switch == 1 ) :
-		$blog_breadcrumb_class = '';
-	endif;
-	?>
-<section class="blog-standard sidebar-page-container sec-pad-2 search-page-area-main <?php echo esc_attr( $blog_breadcrumb_class ); ?>">
-	<div class="auto-container">
+	get_template_part( 'template-parts/tpl-breadcrumbs' );
+?>
+<section class="blog-standard sidebar-page-container pb-100 pt-100">
+	<div class="container">
 		<div class="row clearfix">
 			<div class="<?php echo esc_attr( $blog_post_list_class ); ?> col-md-12 col-sm-12 content-side">
 				<div class="blog-standard-content">

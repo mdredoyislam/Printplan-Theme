@@ -25,10 +25,11 @@ if ( is_active_sidebar( 'sidebar-1' ) ) :
 	if ( $blog_single_breadcrumb_switch == 1 ) :
 		$blog_single_breadcrumb_class = '';
 	endif;
-	?>
 
+	get_template_part( 'template-parts/tpl-breadcrumbs' );
+?>
 <!-- sidebar-page-container -->
-<section class="blog-details sidebar-page-container pt-100 pb-100 <?php echo esc_attr( $blog_single_base_class . ' ' . $blog_single_breadcrumb_class ); ?>">
+<section class="blog-details sidebar-page-container pt-100 pb-100 <?php echo esc_attr( $blog_single_base_class . ' ' ); ?>">
 	<div class="container">
 		<div class="row clearfix">
 			<div class="<?php echo esc_attr( $blog_post_list_class ); ?> col-md-12 col-sm-12 content-side">

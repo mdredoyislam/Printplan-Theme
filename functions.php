@@ -1,5 +1,6 @@
 <?php
 require_once( get_theme_file_path( '/inc/template-tags.php' ) );
+require_once( get_theme_file_path( '/inc/breadcrumbs.php' ) );
 
 defined( 'PRINTPLAN_THEME_URI' ) or define( 'PRINTPLAN_THEME_URI', get_template_directory_uri() );
 define( 'PRINTPLAN_THEME_DRI', get_template_directory() );
@@ -114,20 +115,20 @@ add_action( 'after_setup_theme', 'register_navwalker' );
 function dvprintplan_widgets_init() {
 	register_sidebar(
         array(
-            'name'          => __( 'Single Post Sidebar', 'pichhi' ),
+            'name'          => __( 'Sidebar Widgets', 'dvprintplan' ),
             'id'            => 'sidebar-1',
-            'description'   => __( 'Right Sidebar', 'pichhi' ),
+            'description'   => __( 'Right Sidebar', 'dvprintplan' ),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
-            'before_title'  => '<h2 class="widget-title">',
-            'after_title'   => '</h2>',
+            'before_title'  => '<h3 class="widget-title box-title2 mb-20">',
+            'after_title'   => '</h3>',
         )
     );
     register_sidebar(
         array(
-            'name'          => __( 'Footer Left', 'pichhi' ),
+            'name'          => __( 'Footer Left', 'dvprintplan' ),
             'id'            => 'footer-left',
-            'description'   => __( "Widgetized Area On The Left Side", 'pichhi' ),
+            'description'   => __( "Widgetized Area On The Left Side", 'dvprintplan' ),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '',
@@ -137,9 +138,9 @@ function dvprintplan_widgets_init() {
 
     register_sidebar(
         array(
-            'name'          => __( 'Footer Right', 'pichhi' ),
+            'name'          => __( 'Footer Right', 'dvprintplan' ),
             'id'            => 'footer-right',
-            'description'   => __( "Widgetized Area On The Right Side", 'pichhi' ),
+            'description'   => __( "Widgetized Area On The Right Side", 'dvprintplan' ),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '',
