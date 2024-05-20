@@ -27,6 +27,24 @@ if ( site_url() == "http://localhost/WP/Printplan/" ) {
     define( "_S_VERSION", wp_get_theme()->get( "_S_VERSION" ) );
 }
 
+/**
+ * Theme option compatibility.
+ */
+if ( ! function_exists( 'printplan_get_options' ) ) :
+	function printplan_get_options( $key ) {
+		global $dvprintplan_options;
+		$opt_pref = 'dvprintplan_';
+		if ( empty( $dvprintplan_options ) ) {
+			$dvprintplan_options = get_option( $opt_pref . 'options' );
+		}
+		$index = $opt_pref . $key;
+		if ( ! isset( $dvprintplan_options[ $index ] ) ) {
+			return false;
+		}
+		return $dvprintplan_options[ $index ];
+	}
+endif;
+
 //After Setup Theme
 if ( ! function_exists( 'dvprintplan_setup' ) ) :
     function dvprintplan_setup() {
@@ -42,7 +60,6 @@ if ( ! function_exists( 'dvprintplan_setup' ) ) :
                 'footer-menu' => esc_html__( 'Footer Menu', 'dvprintplan' ),
             )
         );
-        
         add_theme_support( 'html5',
             array(
                 'search-form',
@@ -89,6 +106,43 @@ if ( ! function_exists( 'dvprintplan_setup' ) ) :
     }
 endif;
 add_action( 'after_setup_theme', 'dvprintplan_setup' );
+
+/**
+ * google font compatibility.
+ */
+function dvprintplan_google_font() {
+	global $dvprintplan_options;
+	$enable_google_fonts = isset( $dvprintplan_options['enable_google_fonts'] ) && $dvprintplan_options['enable_google_fonts'] == 0;
+
+	$protocol   = is_ssl() ? 'https' : 'http';
+	$subsets    = 'latin,cyrillic-ext,latin-ext,cyrillic,greek-ext,greek,vietnamese';
+	$variants   = ':300,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i';
+	$query_args = array(
+		'family' => 'Syne' . $variants,
+		'subset' => $subsets,
+	);
+	$font_url   = add_query_arg( $query_args, $protocol . '://fonts.googleapis.com/css?display=swap' );
+	if ( $enable_google_fonts != 1 ) {
+		wp_enqueue_style( 'dvprintplan-google-fonts', $font_url, array(), null );
+	}
+}
+add_action( 'init', 'dvprintplan_google_font' );
+
+function dvprintplan_elementor_library() {
+	$pageslist = get_posts(
+		array(
+			'post_type'      => 'elementor_library',
+			'posts_per_page' => -1,
+		)
+	);
+	$pagearray = array();
+	if ( ! empty( $pageslist ) ) {
+		foreach ( $pageslist as $page ) {
+			$pagearray[ $page->ID ] = $page->post_title;
+		}
+	}
+	return $pagearray;
+}
 
 /**
  * Undocumented function
@@ -255,3 +309,19 @@ function dvprintplan_modify_main_query($wpq){
     }
 }
 add_action("pre_get_posts","dvprintplan_modify_main_query");
+
+function dvprintplan_tag_list(){
+    global $post;
+    $tags = get_the_tags( $post->ID );
+    $separator = ' ';
+    $output = '';
+    if($tags){
+        echo "<h4 class='box-title3 d-inline-block'>" . __('Tags : ', 'dvprintplan') . "</h4> ";
+        foreach($tags as $tag) {
+            if($tag->slug != "dvprintplantag"){
+            $output .= '<a href="'.get_tag_link( $tag->term_id ).'" title="' . esc_attr( sprintf( __( "%s", 'dvprintplan' ), $tag->name ) ) . '">'.$tag->name.'</a>'.$separator;
+            }
+        }
+        echo trim($output, $separator);
+    }
+}

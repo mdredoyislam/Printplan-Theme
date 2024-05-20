@@ -20,8 +20,6 @@
 ====================================================================
 
  ***/
-
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
 :root{
   --light: #ffffff;
   --primary-color: #FDC500;
@@ -89,6 +87,7 @@ section {
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: cover !important;
+  overflow: hidden;
 }
 #hero-section{
   overflow: hidden;

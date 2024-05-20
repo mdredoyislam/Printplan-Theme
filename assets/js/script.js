@@ -2,15 +2,13 @@
 	
 	"use strict";
 
-/*
 	//Mobile Nav Hide Show
-	if($('.mobile-menu').length){
+	if(jQuery('.mobile-menu').length){
 		
-		$('.mobile-menu .menu-box').mCustomScrollbar();
+		//jQuery('.mobile-menu .menu-box').mCustomScrollbar();
 		
-		var mobileMenuContent = $('.main-header .menu-area .main-menu').html();
-		$('.mobile-menu .menu-box .menu-outer').append(mobileMenuContent);
-		$('.sticky-header .main-menu').append(mobileMenuContent);
+		var mobileMenuContent = jQuery('.main-header .main-menu').html();
+		jQuery('.mobile-menu .menu-box .menu-outer').append(mobileMenuContent);
 		
 		//Dropdown Button
 		$('.mobile-menu li.menu-item-has-children .dropdown-btn').on('click', function() {
@@ -31,6 +29,7 @@
 			$('body').removeClass('mobile-menu-visible');
 		});
 	}
+	/*
 
 	// Elements Animation
 	if($('.wow').length){

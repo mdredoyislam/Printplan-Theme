@@ -5,9 +5,9 @@
                 <div class="breadcrumb-wrapper">
 
                     <?php
-                        if(is_category() || is_single()){
+                        if(is_category()){
                             ?><h3 class="section-title mb-20 text-light">Category Name : <?php the_category('name'); ?></h3><?php
-                        }elseif (is_archive() || is_single()){
+                        }elseif (is_archive()){
                             ?><h3 class="section-title mb-20 text-light"><?php the_archive_title(); ?></h3><?php 
                         }
                         if (is_single() || is_page()) {

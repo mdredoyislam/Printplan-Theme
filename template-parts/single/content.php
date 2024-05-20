@@ -69,22 +69,21 @@ endif;
 	</div>
 </div>
 <?php if ( has_tag() != '' || $blog_single_social == '1' ) : ?>
-<div class="post-share-option clearfix">
+<div class="post-share-option d-flex justify-content-between align-items-center mt-50">
 	<?php if ( has_tag() != '' ) : ?>
-	<ul class="tags pull-left">
-		<li><h4><?php esc_html_e( 'Tags:', 'dvprintplan' ); ?></h4></li>
-		<li><?php //dvprintplan_tag_list(); ?></li>
-	</ul>
+	<div class="post-tags">
+		<?php dvprintplan_tag_list(); ?>
+	</div>
 		<?php
 	endif;
 	if ( $blog_single_social == '1' ) :
-		do_action( 'dvprintplan_blog_social_ready' );
+		do_action( 'printplan_blog_social_ready' );
 	endif;
 	?>
 </div>
 	<?php
 endif;
-	do_action( 'dvprintplan_authore_box_ready' );
+	do_action( 'printplan_authore_box_ready' );
 
 	// If comments are open or we have at least one comment, load up the comment template.
 if ( comments_open() || get_comments_number() ) :

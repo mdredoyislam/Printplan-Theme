@@ -94,6 +94,7 @@ $args = array(
 	// 'compiler'             => true,
 );
 Redux::setArgs( $opt_name, $args );
+
 Redux::setSection(
 	$opt_name,
 	array(
@@ -151,116 +152,44 @@ Redux::setSection(
 				'type'    => 'select',
 				'title'   => esc_html__( 'Header menu style', 'dvprintplan' ),
 				'options' => array(
-					'1' => esc_html__( 'One', 'dvprintplan' ),
-					'2' => esc_html__( 'Two', 'dvprintplan' ),
-					'3' => esc_html__( 'Elementor Header', 'dvprintplan' ),
+					'1' => esc_html__( 'Theme Header', 'dvprintplan' ),
+					'2' => esc_html__( 'Elementor Header', 'dvprintplan' ),
 				),
+				'default'  => 1,
 			),
 			array(
-				'required' => array( $opt_prefix . 'header_menu_style', '=', array( '3' ) ),
+				'required' => array( $opt_prefix . 'header_menu_style', '=', array( '2' ) ),
 				'id'       => $opt_prefix . 'header_widget_elementor',
 				'type'     => 'select',
 				'multi'    => true,
 				'title'    => esc_html__( 'Header builder widget', 'dvprintplan' ),
-				//'options'  => dvprintplan_elementor_library(),
+				'options'  => dvprintplan_elementor_library(),
 			),
 			array(
-				'required' => array( $opt_prefix . 'header_menu_style', '=', array( '2' ) ),
-				'id'       => $opt_prefix . 'header_on_of_search',
-				'type'     => 'switch',
-				'title'    => esc_html__( 'Header search button on off', 'dvprintplan' ),
-				'default'  => false,
-				'on'       => esc_html__( 'Enable', 'dvprintplan' ),
-				'off'      => esc_html__( 'Disable', 'dvprintplan' ),
-			),
-
-			array(
-				'required' => array( $opt_prefix . 'header_menu_style', '=', array( '1', '2' ) ),
-				'id'       => $opt_prefix . 'header_top_bar_appointment_text',
+				'required' => array( $opt_prefix . 'header_menu_style', '=', array( '1' ) ),
+				'id'       => $opt_prefix . 'header_btn1_text',
 				'type'     => 'text',
 				'title'    => esc_html__( 'Button Text', 'dvprintplan' ),
-				'default'  => esc_html__( 'Book Appointment', 'dvprintplan' ),
+				'default'  => esc_html__( 'Message', 'dvprintplan' ),
 			),
 			array(
-				'required' => array( $opt_prefix . 'header_menu_style', '=', array( '1', '2' ) ),
-				'id'       => $opt_prefix . 'header_top_bar_appointment_url',
+				'required' => array( $opt_prefix . 'header_menu_style', '=', array( '1' ) ),
+				'id'       => $opt_prefix . 'header_btn1_url',
 				'type'     => 'text',
 				'title'    => esc_html__( 'Button URL', 'dvprintplan' ),
 			),
-		),
-	)
-);
-Redux::setSection(
-	$opt_name,
-	array(
-		'title'      => esc_html__( 'Header Top Bar', 'dvprintplan' ),
-		'id'         => 'header_menu_option',
-		'subsection' => true,
-		'icon'       => 'el el-home',
-		'fields'     => array(
 			array(
-				'id'      => $opt_prefix . 'header_top_bar_style',
-				'type'    => 'select',
-				'title'   => esc_html__( 'Header top bar style', 'dvprintplan' ),
-				'options' => array(
-					'1' => esc_html__( 'One', 'dvprintplan' ),
-					'2' => esc_html__( 'Two', 'dvprintplan' ),
-				),
+				'required' => array( $opt_prefix . 'header_menu_style', '=', array( '1' ) ),
+				'id'       => $opt_prefix . 'header_btn2_text',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Button Text', 'dvprintplan' ),
+				'default'  => esc_html__( 'Call Me', 'dvprintplan' ),
 			),
 			array(
-				'id'      => $opt_prefix . 'header_top_bar_welcome',
-				'type'    => 'text',
-				'title'   => esc_html__( 'Welcome Text', 'dvprintplan' ),
-				'default' => esc_html__( 'Welcome to the professional physiotherapy clinic', 'dvprintplan' ),
-			),
-			array(
-				'id'      => $opt_prefix . 'header_top_bar_address',
-				'type'    => 'text',
-				'title'   => esc_html__( 'Address', 'dvprintplan' ),
-				'default' => esc_html__( '88 broklyn silver street, USA', 'dvprintplan' ),
-			),
-			array(
-				'id'      => $opt_prefix . 'header_top_bar_hours',
-				'type'    => 'text',
-				'title'   => esc_html__( 'Hours', 'dvprintplan' ),
-				'default' => esc_html__( 'Mon to Fri 9:00am to 6:00pm', 'dvprintplan' ),
-			),
-			array(
-				'id'      => $opt_prefix . 'header_top_bar_email',
-				'type'    => 'text',
-				'title'   => esc_html__( 'Email', 'dvprintplan' ),
-				'default' => esc_html__( 'needhelp@info.com', 'dvprintplan' ),
-			),
-			array(
-				'id'      => $opt_prefix . 'header_top_bar_phone',
-				'type'    => 'text',
-				'title'   => esc_html__( 'Phone', 'dvprintplan' ),
-				'default' => esc_html__( '88 666 000 9999', 'dvprintplan' ),
-			),
-			array(
-				'id'    => $opt_prefix . 'header_top_bar_social',
-				'type'  => 'textarea',
-				'title' => esc_html__( 'Social', 'dvprintplan' ),
-			),
-		),
-	)
-);
-Redux::setSection(
-	$opt_name,
-	array(
-		'title'      => esc_html__( 'sticky header Menu', 'dvprintplan' ),
-		'id'         => 'sticky_header_menu_option',
-		'subsection' => true,
-		'desc'       => esc_html__( 'Chnage Header Menu option here', 'dvprintplan' ),
-		'icon'       => 'el el-home',
-		'fields'     => array(
-			array(
-				'id'      => $opt_prefix . 'sticky_header_on',
-				'type'    => 'switch',
-				'title'   => esc_html__( 'sticky header on off switch', 'dvprintplan' ),
-				'default' => false,
-				'on'      => esc_html__( 'Enable', 'dvprintplan' ),
-				'off'     => esc_html__( 'Disable', 'dvprintplan' ),
+				'required' => array( $opt_prefix . 'header_menu_style', '=', array( '1' ) ),
+				'id'       => $opt_prefix . 'header_btn2_url',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Button URL', 'dvprintplan' ),
 			),
 		),
 	)
@@ -506,7 +435,7 @@ Redux::setSection(
 				'type'    => 'select',
 				'multi'   => true,
 				'title'   => esc_html__( 'Footer widget', 'dvprintplan' ),
-				//'options' => dvprintplan_elementor_library(),
+				'options' => dvprintplan_elementor_library(),
 			),
 		),
 	)

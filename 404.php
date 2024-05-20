@@ -10,7 +10,6 @@
 get_header();
 ?>
 
-
 <section class="error-404 not-found">
 	<div class="container">
 		<div class="row">

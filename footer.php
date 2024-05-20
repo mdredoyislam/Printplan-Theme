@@ -15,21 +15,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="site-branding">
-                        <?php
-                                if(!get_custom_logo()){
-                                    if ( is_front_page() && is_home() ) :
-                                        ?>
-                        <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-                        <?php
-                                        else :
-                                        ?>
-                        <p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
-                        <?php
-                                    endif;
-                                }else{
-                                    the_custom_logo();
-                                }
-                            ?>
+                    <?php do_action( 'dvprintplan_header_logo_ready' ); ?>
                     </div><!-- .site-branding -->
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
@@ -75,9 +61,7 @@
         </div>
     </div>
 </footer><!-- #colophon -->
-<button class="scroll-top scroll-to-target open" data-target="html">
-<span class="fa fa-arrow-up"></span>
-</button>
+<?php do_action( 'dvprintplan_back_to_top_ready' ); ?>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
