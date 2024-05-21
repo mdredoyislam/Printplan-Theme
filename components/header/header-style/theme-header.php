@@ -16,7 +16,6 @@
 					<?php do_action( 'dvprintplan_header_logo_ready' ); ?>
 					</div><!-- .site-branding -->
 					<div class="navigation-wrap">
-						<div class="btn-toggle"></div>
 						<div class="mobile-nav-toggler">
 							<div class="icon-bar"></div>
 							<div class="icon-bar"></div>
@@ -40,12 +39,12 @@
 						?>
 					</div><!-- .navigation-wrap -->
 					<div class="topbutton-wrap">
-					<?php if ( $header_btn1_text && $header_btn1_url ) : ?>
-						<a href="<?php echo esc_url( $header_btn1_url ); ?>" class="btn common-btn d-inline-block"><?php echo esc_html( $header_btn1_text ); ?></a>
-					<?php endif; ?>
-					<?php if ( $header_btn2_text && $header_btn2_url ) : ?>
-						<a href="<?php echo esc_url( $header_btn2_url ); ?>" class="btn common-btn common-btn-color d-inline-block"><?php echo esc_html( $header_btn2_text ); ?></a>
-					<?php endif; ?>
+						<?php if ( $header_btn1_text && $header_btn1_url ) : ?>
+							<a href="<?php echo esc_url( $header_btn1_url ); ?>" class="btn common-btn d-inline-block"><?php echo esc_html( $header_btn1_text ); ?></a>
+						<?php endif; ?>
+						<?php if ( $header_btn2_text && $header_btn2_url ) : ?>
+							<a href="<?php echo esc_url( $header_btn2_url ); ?>" class="btn common-btn common-btn-color d-inline-block"><?php echo esc_html( $header_btn2_text ); ?></a>
+						<?php endif; ?>
 					</div><!-- .topbutton-wrap -->
 				</nav>
 			</div>

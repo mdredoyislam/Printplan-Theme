@@ -69,35 +69,29 @@ class printplan_Int {
 		<div class="mobile-menu">
 			<div class="menu-backdrop"></div>
 			<div class="close-btn"><i class="fas fa-times"></i></div>
-			
+
 			<nav class="menu-box">
 				<div class="nav-logo">
-				<?php if ( isset( $mobile_menu_logo['url'] ) && $mobile_menu_logo['url'] != '' ) : ?>
+					<?php if ( isset( $mobile_menu_logo['url'] ) && $mobile_menu_logo['url'] != '' ) : ?>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" ><img src="<?php echo esc_url( $mobile_menu_logo['url'] ); ?>"  alt="<?php esc_attr_e( 'Logo', 'printplan' ); ?>"></a>
 					<?php else : ?>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" ><img src="<?php echo esc_url( PRINTPLAN_IMG_URL . 'logo.png' ); ?>" alt="<?php esc_attr_e( 'Logo', 'printplan' ); ?>"></a>
 					<?php endif; ?>
 				</div>
 				<div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
-		<?php if ( $mobile_menu_contact ) : ?>
-				<div class="contact-info">
-					<h4><?php esc_html_e( 'Contact Info', 'printplan' ); ?></h4>
-					<ul>
-						<?php echo wp_kses( $mobile_menu_contact, 'printplan_kses' ); ?>
-					</ul>
-				</div>
-		<?php endif ?>
-		<?php if ( $mobile_menu_social ) : ?>
-				<div class="social-links">
-					<ul class="clearfix">
-						<?php echo wp_kses( $mobile_menu_social, 'printplan_kses' ); ?>
-					</ul>
-				</div>
-		<?php endif ?>
+				<?php if ( $mobile_menu_contact ) : ?>
+					<div class="contact-info">
+						<h4><?php esc_html_e( 'Contact Info', 'printplan' ); ?></h4>
+						<ul class="nav d-block">
+							<?php echo $mobile_menu_contact; ?>
+						</ul>
+					</div>
+				<?php endif ?>
+				<div class="menu-buttons"><!--Here Menu Buttons Will Come Automatically Via Javascript / Same Menu as in Header--></div>
 			</nav>
 		</div><!-- End Mobile Menu -->
+<?php
 
-		<?php
 	}
 	
 	/**

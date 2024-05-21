@@ -1,9 +1,9 @@
-<section id="breadcrumb-section" class="breadcrumb pt-100 pb-100" style="background: url(<?php echo PRINTPLAN_THEME_URI. '/assets/images/page-title.jpg';?>)">
+
+<section id="breadcrumb-section" class="breadcrumb pt-100 pb-100">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb-wrapper">
-
                     <?php
                         if(is_category()){
                             ?><h3 class="section-title mb-20 text-light">Category Name : <?php the_category('name'); ?></h3><?php

@@ -7,8 +7,7 @@
  * @package dvprintplan
  */
 
-//$blog_single_social      = dvprintplan_get_options( 'blog_single_social' );
-$blog_single_social      = 1;
+$blog_single_social      = printplan_get_options( 'blog_single_social' );
 $single_post_thumb_class = 'no-single-post-thumb';
 
 if ( has_post_thumbnail() ) :

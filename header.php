@@ -25,5 +25,4 @@
 	do_action( 'dvprintplan_preloader_ready' );
 	get_template_part( 'components/header/header' );
 	do_action( 'printplan_mobile_menu_ready' );
-	//do_action( 'resox_breadcrumb_ready' );
 ?>

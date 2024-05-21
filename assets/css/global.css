@@ -134,6 +134,9 @@ section .hero-section-wrap {
 .scroll-top.open {
   bottom: 30px;
 }
+.img-fluid{
+  width: 100%;
+}
 /*Global button Style End*/
 /*Global Heading Style Start*/
 h1, h2, h3, h4, h5, h6{

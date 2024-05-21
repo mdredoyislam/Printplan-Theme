@@ -506,7 +506,6 @@ Single Page Template Design
 
 
 /** mobile-menu **/
-
 .mobile-nav-toggler {
     position: relative;
     float: right;
@@ -516,7 +515,7 @@ Single Page Template Design
     color: #3786ff;
     display: none;
 }
-.menu-area .mobile-nav-toggler .icon-bar {
+.mobile-nav-toggler .icon-bar {
     position: relative;
     height: 2px;
     width: 30px;
@@ -533,7 +532,7 @@ Single Page Template Design
     position: fixed;
     right: 0;
     top: 0;
-    width: 300px;
+    width: 320px;
     padding-right: 30px;
     max-width: 100%;
     height: 100%;
@@ -541,27 +540,22 @@ Single Page Template Design
     visibility: hidden;
     z-index: 999999;
 }
-
 .mobile-menu .navbar-collapse {
     display: block !important;
 }
-
 .mobile-menu .nav-logo {
     position: relative;
     padding: 50px 25px;
     text-align: left;
-    padding-bottom: 100px;
+    display: block;
 }
-
 .mobile-menu-visible {
     overflow: hidden;
 }
-
 .mobile-menu-visible .mobile-menu {
     opacity: 1;
     visibility: visible;
 }
-
 .mobile-menu .menu-backdrop {
     position: fixed;
     right: 0;
@@ -579,7 +573,6 @@ Single Page Template Design
     -ms-transition: all 900ms ease;
     -o-transition: all 900ms ease;
 }
-
 .mobile-menu-visible .mobile-menu .menu-backdrop {
     opacity: 0.70;
     visibility: visible;
@@ -592,7 +585,6 @@ Single Page Template Design
     -ms-transform: translateX(0%);
     transform: translateX(0%);
 }
-
 .mobile-menu .menu-box {
     position: absolute;
     left: 0px;
@@ -611,7 +603,6 @@ Single Page Template Design
     -ms-transform: translateX(101%);
     transform: translateX(101%);
 }
-
 .mobile-menu-visible .mobile-menu .menu-box {
     opacity: 1;
     visibility: visible;
@@ -624,7 +615,6 @@ Single Page Template Design
     -ms-transform: translateX(0%);
     transform: translateX(0%);
 }
-
 .mobile-menu .close-btn {
     position: absolute;
     right: 25px;
@@ -642,45 +632,38 @@ Single Page Template Design
     -o-transition: all 0.9s ease;
     transition: all 0.9s ease;
 }
-
 .mobile-menu-visible .mobile-menu .close-btn {
     -webkit-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     transform: rotate(360deg);
 }
-
 .mobile-menu .close-btn:hover {
     -webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
 }
-
-.mobile-menu .navigation {
+.mobile-menu .navbar-nav {
     position: relative;
     display: block;
     width: 100%;
     float: none;
 }
-
-.mobile-menu .navigation li {
+.mobile-menu .navbar-nav li {
     position: relative;
     display: block;
     border-top: 1px solid rgba(255, 255, 255, 0.10);
 }
-
-.mobile-menu .navigation:last-child {
+.mobile-menu .navbar-nav:last-child {
     border-bottom: 1px solid rgba(255, 255, 255, 0.10);
 }
-
-.mobile-menu .navigation li>ul>li:first-child {
+.mobile-menu .navbar-nav li > ul > li:first-child {
     border-top: 1px solid rgba(255, 255, 255, 0.10);
 }
-
-.mobile-menu .navigation li>a {
+.mobile-menu .navbar-nav li > a {
     position: relative;
     display: block;
     line-height: 24px;
-    padding: 10px 25px;
+    padding: 15px 25px !important;
     font-size: 15px;
     font-weight: 500;
     color: #ffffff;
@@ -691,14 +674,13 @@ Single Page Template Design
     -o-transition: all 500ms ease;
     transition: all 500ms ease;
 }
-
-.mobile-menu .navigation li ul li>a {
+.mobile-menu .navbar-nav li ul li > a {
     font-size: 16px;
     margin-left: 20px;
     text-transform: capitalize;
+    border: unset;
 }
-
-.mobile-menu .navigation li>a:before {
+.mobile-menu .navbar-nav li > a:before {
     content: '';
     position: absolute;
     left: 0;
@@ -711,15 +693,13 @@ Single Page Template Design
     -o-transition: all 500ms ease;
     transition: all 500ms ease;
 }
-
-.mobile-menu .navigation li.current_page_ancestor>a:before {
+.mobile-menu .navbar-nav li.current_page_ancestor > a:before {
     height: 100%;
 }
-
-.mobile-menu .navigation li.menu-item-has-children .dropdown-btn {
+.mobile-menu .navbar-nav li.menu-item-has-children .dropdown-btn {
     position: absolute;
-    right: 6px;
-    top: 6px;
+    right: 11px;
+    top: 11px;
     width: 32px;
     height: 32px;
     text-align: center;
@@ -736,32 +716,27 @@ Single Page Template Design
     transition: all 500ms ease;
     z-index: 5;
 }
-
-.mobile-menu .navigation li.menu-item-has-children .dropdown-btn.open {
+.mobile-menu .navbar-nav li.menu-item-has-children .dropdown-btn.open {
     background: #fff;
     color: #3b3b3b;
     -webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
 }
-
-.mobile-menu .navigation li>ul,
-.mobile-menu .navigation li>ul>li>ul,
-.mobile-menu .navigation>li.menu-item-has-children>.megamenu {
+.mobile-menu .navbar-nav li>ul,
+.mobile-menu .navbar-nav li>ul>li>ul,
+.mobile-menu .navbar-nav>li.menu-item-has-children>.megamenu {
     display: none;
 }
-
 .mobile-menu .social-links {
     position: relative;
     padding: 0px 25px;
 }
-
 .mobile-menu .social-links li {
     position: relative;
     display: inline-block;
     margin: 0px 10px 10px;
 }
-
 .mobile-menu .social-links li a {
     position: relative;
     line-height: 32px;
@@ -773,16 +748,13 @@ Single Page Template Design
     -o-transition: all 500ms ease;
     transition: all 500ms ease;
 }
-
 div#mCSB_1_container {
     top: 0px !important;
 }
-
 .mobile-menu .contact-info {
     position: relative;
-    padding: 120px 30px 20px 30px;
+    padding: 50px 30px 20px 30px;
 }
-
 .mobile-menu .contact-info h4 {
     position: relative;
     font-size: 20px;
@@ -790,7 +762,6 @@ div#mCSB_1_container {
     font-weight: 700;
     margin-bottom: 20px;
 }
-
 .mobile-menu .contact-info ul li {
     position: relative;
     display: block;
@@ -798,25 +769,24 @@ div#mCSB_1_container {
     color: rgba(255, 255, 255, 0.80);
     margin-bottom: 3px;
 }
-
 .mobile-menu .contact-info ul li a {
     color: rgba(255, 255, 255, 0.80);
 }
-
 .mobile-menu .contact-info ul li:last-child {
     margin-bottom: 0px;
 }
-
-@media only screen and (max-width: 1200px){
-
-    .main-menu{
-      display: none !important;
-    }
-  
-    .mobile-nav-toggler {
-      display: block;
-      margin-top: 26px;
-      padding: 10px;
-      margin-bottom: 20px;
-    }
+.menu-buttons {
+    padding: 30px 30px 20px 30px;
+}
+.menu-buttons .common-btn {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    padding: 12px 20px;
+    font-size: 12px;
+}
+.menu-buttons .common-btn-color{
+    color: var(--dark-color);
+}
+.menu-buttons .common-btn:hover{
+    color: var(--light);
 }

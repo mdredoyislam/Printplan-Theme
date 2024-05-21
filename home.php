@@ -8,7 +8,7 @@ get_header();
 <section id="hero-section" style="background: url(<?php echo get_template_directory_uri(); ?>/assets/images/hero-bg.png)">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-6">
                 <div class="hero-section-wrap">
                     <h1 class="hero-title mb-30">Hello, I’m Iqbal Ahmed</h1>
                     <p class="mb-50">Hi! I'm a UI/UX Designer - creating bold & brave interface design for companies all across the world.</p>
@@ -21,9 +21,9 @@ get_header();
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-6">
                 <div class="hero-section-image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/profile.png" alt="" srcset="">
+                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/images/profile.png" alt="" srcset="">
                 </div>
             </div>
         </div>
@@ -274,7 +274,7 @@ get_header();
                 if($postQuery->have_posts()):
                 while ($postQuery->have_posts()): $postQuery->the_post();
             ?>
-            <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="blog-item">
                     <div class="blog-thumbnsil mb-30">
                         <?php the_post_thumbnail('full', array('class'=>'img-fluid')); ?>
@@ -292,22 +292,22 @@ get_header();
 <section id="contact-section" class="pt-100 pb-100" style="background: url(<?php echo get_template_directory_uri(); ?>/assets/images/shape.png);">
     <div class="container">
         <div class="row mb-70">
-            <div class="col-lg-8 offset-md-2">
+            <div class="col-lg-8 offset-lg-2 col-md-12 col-sm-12">
                 <h3 class="section-title text-center mb-30">Let's get in touch<br />with me.</h3>
                 <div class="form-wrap">
                     <form action="" method="" class="text-center">
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-4 col-sm-12">
                                 <div class="form-group">
                                     <input type="text" class="form-control" required placeholder="Your Name*">
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-4 col-sm-12">
                                 <div class="form-group">
                                     <input type="email" class="form-control" required placeholder="Email Address*">
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-4 col-sm-12">
                                 <div class="form-group">
                                     <input type="text" class="form-control" required placeholder="Mobile Number*">
                                 </div>
@@ -317,14 +317,16 @@ get_header();
                                     <textarea class="form-control" rows="6" placeholder="How can we help you?"></textarea>
                                 </div>
                             </div>
+                            <div class="col-12">
+                                <button class="btn common-btn common-btn-color text-center mt-20 m-auto">SEND MESSAGE</button>
+                            </div>
                         </div>
-                        <button class="btn common-btn common-btn-color text-center mt-20 m-auto">SEND MESSAGE</button>
                     </form>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-8 offset-md-2 text-center">
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center">
                 <div class="services-box d-inline-block mr-20">
                     <div class="services-item d-flex align-items-center">
                         <div class="service-icon">

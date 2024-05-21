@@ -11,7 +11,6 @@
  *
  * @package DVPrintplan
  */
-
 get_header();
 
 $page_single_col = '12';

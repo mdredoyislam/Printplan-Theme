@@ -214,11 +214,6 @@ Redux::setSection(
 				'type'  => 'ace_editor',
 				'title' => esc_html__( 'mobile contact info', 'dvprintplan' ),
 			),
-			array(
-				'id'    => $opt_prefix . 'mobile_menu_social',
-				'type'  => 'ace_editor',
-				'title' => esc_html__( 'mobile contact social', 'dvprintplan' ),
-			),
 		),
 	)
 );
@@ -333,57 +328,15 @@ Redux::setSection(
 		'id'     => 'breadcrumb_area',
 		'icon'   => 'el el-home',
 		'fields' => array(
-
 			array(
-				'id'      => $opt_prefix . 'blog_breadcrumb_switch',
-				'type'    => 'switch',
-				'title'   => esc_html__( 'Blog breadcrumb on off switch', 'dvprintplan' ),
-				'default' => false,
-				'on'      => esc_html__( 'Enable', 'dvprintplan' ),
-				'off'     => esc_html__( 'Disable', 'dvprintplan' ),
-			),
-			array(
-				'required' => array( $opt_prefix . 'blog_breadcrumb_switch', '=', '1' ),
-				'id'       => $opt_prefix . 'blog_breadcrumb_bg',
+				'id'       => $opt_prefix . 'breadcrumb_bg',
 				'type'     => 'background',
 				'url'      => true,
-				'title'    => esc_html__( 'Blog breadcrumb background', 'dvprintplan' ),
+				'title'    => esc_html__( 'Breadcrumb background', 'dvprintplan' ),
 				'output'   => array(
-					'background' => '.blog-breadcrumb',
+					'background' => '.breadcrumb',
 				),
-			),
-			array(
-				'required' => array( $opt_prefix . 'blog_breadcrumb_switch', '=', '1' ),
-				'id'       => $opt_prefix . 'blog_breadcrumb_content',
-				'type'     => 'text',
-				'title'    => esc_html__( 'Blog breadcrumb title', 'dvprintplan' ),
-				'default'  => esc_html__( 'Blog Page', 'dvprintplan' ),
-			),
-			array(
-				'id'      => $opt_prefix . 'blog_single_breadcrumb_switch',
-				'type'    => 'switch',
-				'title'   => esc_html__( 'Blog Single breadcrumb on off switch', 'dvprintplan' ),
-				'default' => false,
-				'on'      => esc_html__( 'Enable', 'dvprintplan' ),
-				'off'     => esc_html__( 'Disable', 'dvprintplan' ),
-			),
-			array(
-				'required' => array( $opt_prefix . 'blog_single_breadcrumb_switch', '=', '1' ),
-				'id'       => $opt_prefix . 'blog_single_breadcrumb_bg',
-				'type'     => 'background',
-				'url'      => true,
-				'title'    => esc_html__( 'Blog Single breadcrumb background', 'dvprintplan' ),
-				'output'   => array(
-					'background' => '.blog-single-breadcrumb',
-				),
-			),
-			array(
-				'required' => array( $opt_prefix . 'blog_single_breadcrumb_switch', '=', '1' ),
-				'id'       => $opt_prefix . 'blog_single_breadcrumb_content',
-				'type'     => 'text',
-				'title'    => esc_html__( 'Blog single breadcrumb title', 'dvprintplan' ),
-				'default'  => esc_html__( 'Blog Details', 'dvprintplan' ),
-			),
+			)
 		),
 	)
 );
@@ -395,15 +348,6 @@ Redux::setSection(
 		'desc'   => esc_html__( 'Change blog option', 'dvprintplan' ),
 		'icon'   => 'el el-home',
 		'fields' => array(
-			array(
-				'id'      => $opt_prefix . 'blog_style',
-				'type'    => 'select',
-				'title'   => esc_html__( 'Blog style', 'dvprintplan' ),
-				'options' => array(
-					'1' => esc_html__( 'One', 'dvprintplan' ),
-					'2' => esc_html__( 'Two', 'dvprintplan' ),
-				),
-			),
 			array(
 				'id'      => $opt_prefix . 'blog_single_social',
 				'type'    => 'switch',
