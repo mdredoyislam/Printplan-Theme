@@ -12,6 +12,7 @@ class Printplan_Scripts{
 		wp_enqueue_script( 'bootstrap', PRINTPLAN_JS_URL . 'bootstrap.min.js', array( 'jquery' ), time(), true );
 		wp_enqueue_script( 'wow', PRINTPLAN_JS_URL . 'wow.js', array( 'jquery' ), time(), true );
 		wp_enqueue_script( 'owl', PRINTPLAN_JS_URL . 'owl.carousel.min.js', array( 'jquery' ), time(), true );
+		wp_enqueue_script( 'isotope', PRINTPLAN_JS_URL . 'isotope.pkgd.min.js', array( 'jquery' ), time(), true );
 		wp_enqueue_script( 'fancybox', PRINTPLAN_JS_URL . 'jquery.fancybox.js', array( 'jquery' ), time(), true );
 		wp_enqueue_script( 'counterup', PRINTPLAN_JS_URL . 'jquery.counterup.js', array( 'jquery' ), time(), true );
 		wp_enqueue_script( 'waypoints', PRINTPLAN_JS_URL . 'waypoints.min.js', array( 'jquery' ), time(), true );

@@ -228,7 +228,6 @@ Header Menu Style
         transform: scale(1);
     }
 }
-
 .services-box{
     padding: 20px 40px;
     border: var(--common-border);
@@ -236,7 +235,7 @@ Header Menu Style
     transition: all linear.3s;
     transform: scale(1);
 }
-.services-box:hover{
+.services-box:hover, .services-box.active{
     background: var(--light );
     border-color: var(--light);
     transform: scale(1.05);
@@ -248,15 +247,21 @@ Header Menu Style
 .services-text p{
     margin: 0;
 }
-
-
+.service-icon {
+    font-size: 30px !important;
+    color: var(--primary-color);
+}
+.service-icon svg {
+    width: 50px;
+    fill: var(--primary-color);
+}
+.section-text-wrap a.btn {
+    margin-top: 20px;
+}
 
 /* ---- isotope ---- */
-.grid-sizer,.grid-item {
-    width: 33.333%;
-}
+
 .grid-item {
-    float: left;
     position: relative;
 }
 .grid-item img {
@@ -400,9 +405,10 @@ Header Menu Style
     z-index: 1;
     position: relative;
 }
-.owl-item-wrap > img{
+.owl-item-wrap > img, .owl-item-wrap .quote-icon svg {
     width: 26px !important;
     margin: auto;
+    fill: #b8b1b1;
 }
 
 /*----------------------------------
