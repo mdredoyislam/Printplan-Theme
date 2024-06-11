@@ -260,7 +260,10 @@ Header Menu Style
 }
 
 /* ---- isotope ---- */
-
+.project-row{
+    row-gap: 20px !important;
+    justify-content: center;
+}
 .grid-item {
     position: relative;
 }
@@ -284,10 +287,16 @@ Header Menu Style
     width: 60px;
     padding: unset;
     font-size: 20px;
-    line-height: 60px;
+    line-height: 55px;
+}
+.project-linker a svg{
+    width: 20px;
 }
 .grid-item:hover .project-linker{
     transform: scale(1);
+}
+.project-btn {
+    width: unset !important;
 }
 /* Testimonial Section */
 .owl-item {
