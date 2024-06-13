@@ -373,16 +373,22 @@ Header Menu Style
     background-size: 100% 50% !important;
     background-repeat: no-repeat !important;
 }
-.form-wrap .form-group .form-control {
+.form-wrap .form-control {
     background: var(--light-color);
     border: 1px solid #E0E0E0;
     border-radius: 0;
     min-height: 58px;
     padding: 20px 30px;
 }
-.form-wrap button {
+.form-wrap input[type=submit] {
     min-height: 58px;
     border-radius: 0;
+}
+.form-wrap p {
+    text-align: center;
+}
+.form-wrap p .wpcf7-spinner {
+    display: none !important;
 }
 .owl-theme .owl-nav button.owl-prev, .owl-theme .owl-nav button.owl-next{
     font-family: var(--primary-font) !important;
