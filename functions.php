@@ -16,7 +16,6 @@ require_once PRINTPLAN_FRAMEWORK_DRI . 'demo-data/demo-import.php';
 require_once PRINTPLAN_FRAMEWORK_DRI . 'printplan/printplan-config.php';
 require_once PRINTPLAN_FRAMEWORK_DRI . 'tgm/class-tgm-plugin-activation.php';
 require_once PRINTPLAN_FRAMEWORK_DRI . 'tgm/config-tgm.php';
-//require_once PRINTPLAN_FRAMEWORK_DRI . 'dashboard/class-dashboard.php';
 require_once PRINTPLAN_FRAMEWORK_DRI . 'classes/printplan-int.php';
 require_once PRINTPLAN_FRAMEWORK_DRI . 'classes/printplan-act.php';
 require_once PRINTPLAN_THEME_DRI . '/assets/css/custom-style.php';
@@ -325,3 +324,4 @@ function dvprintplan_tag_list(){
         echo trim($output, $separator);
     }
 }
+add_filter('use_block_editor_for_post_type', '__return_false');

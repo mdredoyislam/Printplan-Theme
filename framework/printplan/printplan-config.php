@@ -40,7 +40,7 @@ $args = array(
 	'async_typography'     => true,
 	// Use a asynchronous font on the front end or font string
 	// 'disable_google_fonts_link' => true,                    // Disable this in case you want to create your own google fonts loader
-	'admin_bar'            => true,
+	'admin_bar'            => false,
 	// Show the panel pages on the admin bar
 	'admin_bar_icon'       => 'dashicons-portfolio',
 	// Choose an icon for the admin bar menu
@@ -370,34 +370,36 @@ Redux::setSection(
 Redux::setSection(
 	$opt_name,
 	array(
-		'title'  => esc_html__( 'Elementor widget for Footer', 'dvprintplan' ),
-		'id'     => 'footer_widget_elementor_lib',
+		'title'  => esc_html__( 'Footer Options', 'dvprintplan' ),
+		'id'     => 'dvprintplan_footer_settings',
 		'icon'   => 'el el-home',
 		'fields' => array(
 			array(
-				'id'      => $opt_prefix . 'footer_left_widget_elementor',
+				'id'      => $opt_prefix . 'footer_style',
 				'type'    => 'select',
-				'multi'   => true,
-				'title'   => esc_html__( 'Footer widget', 'dvprintplan' ),
-				'options' => dvprintplan_elementor_library(),
+				'title'   => esc_html__( 'Footer style', 'dvprintplan' ),
+				'options' => array(
+					'1' => esc_html__( 'Theme Footer', 'dvprintplan' ),
+					'2' => esc_html__( 'Elementor Footer', 'dvprintplan' ),
+				),
+				'default'  => 1,
 			),
-		),
-	)
-);
-Redux::setSection(
-	$opt_name,
-	array(
-		'title'  => esc_html__( 'Footer option', 'dvprintplan' ),
-		'id'     => 'dvprintplan_footer_area',
-		'desc'   => esc_html__( 'Chnage footer option here', 'dvprintplan' ),
-		'icon'   => 'el el-home',
-		'fields' => array(
 			array(
+				'required' => array( $opt_prefix . 'footer_style', '=', array( '2' ) ),
+				'id'       => $opt_prefix . 'footer_widget_elementor',
+				'type'     => 'select',
+				'multi'    => true,
+				'title'    => esc_html__( 'Footer builder widget', 'dvprintplan' ),
+				'options'  => dvprintplan_elementor_library(),
+			),
+			array(
+				'required' => array( $opt_prefix . 'footer_style', '=', array( '1' ) ),
 				'id'    => $opt_prefix . 'footer_copyright',
 				'type'  => 'textarea',
 				'title' => esc_html__( 'Copyright Text', 'dvprintplan' ),
 			),
 			array(
+				'required' => array( $opt_prefix . 'footer_style', '=', array( '1' ) ),
 				'id'    => $opt_prefix . 'footer_link',
 				'type'  => 'ace_editor',
 				'title' => esc_html__( 'Footer Links', 'dvprintplan' ),

@@ -30,22 +30,6 @@ class PrintplanThemeRequiredPlugins {
 				'external_url'       => '',
 			),
 			array(
-				'name'               => esc_html__( 'Customizer Export Import', 'dvprintplan' ),
-				'slug'               => 'customizer-export-import',
-				'required'           => true,
-				'force_activation'   => false,
-				'force_deactivation' => false,
-				'external_url'       => '',
-			),
-			array(
-				'name'               => esc_html__( 'Widget Importer Exporter', 'dvprintplan' ),
-				'slug'               => 'widget-importer-exporter',
-				'required'           => true,
-				'force_activation'   => false,
-				'force_deactivation' => false,
-				'external_url'       => '',
-			),
-			array(
 				'name'               => esc_html__( 'Redux Framework', 'dvprintplan' ),
 				'slug'               => 'redux-framework',
 				'required'           => true,
@@ -68,15 +52,7 @@ class PrintplanThemeRequiredPlugins {
 				'force_activation'   => false,
 				'force_deactivation' => false,
 				'external_url'       => '',
-			),
-			array(
-				'name'               => esc_html__( 'Meta Box', 'dvprintplan' ),
-				'slug'               => 'meta-box',
-				'required'           => false,
-				'force_activation'   => false,
-				'force_deactivation' => false,
-				'external_url'       => '',
-			),
+			)
 		);
 
 		// Change this to your theme text domain, used for internationalising strings

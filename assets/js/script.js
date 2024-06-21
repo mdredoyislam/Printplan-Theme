@@ -57,15 +57,6 @@
 		$('.navbar-nav li.menu-item-has-children').append('<div class="dropdown-btn"><span class="fas fa-angle-down"></span></div>');
 		
 	}
-	//Menu On Hover
-	/*$('body').on('mouseenter mouseleave','.services-box',function(e){
-		if ($(window).width() > 750) {
-			var _d=$(e.target).closest('.services-box');_d.addClass('active');
-			setTimeout(function(){
-			_d[_d.is(':hover')?'addClass':'removeClass']('active');
-			},1);
-		}
-	});*/
 
 	$('body').on('mouseenter mouseleave','.nav-item',function(e){
 		if ($(window).width() > 750) {
@@ -114,7 +105,6 @@
 	});
 	$(window).on('load', function() {
 		handlePreloader();
-		enableMasonry();
 	});
 
 	//About Progress Bar
